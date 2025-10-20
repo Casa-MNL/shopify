@@ -452,3 +452,15 @@
     color: currentColor;
   }
 }
+
+@media screen and (max-width: 749px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
