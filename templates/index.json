@@ -112,8 +112,53 @@
       "blocks": {
         "ai_gen_block_2bfa6a2_VYhxqA": {
           "type": "ai_gen_block_2bfa6a2",
+          "name": "Collection grid - Layer 1",
           "settings": {
             "section_title": "Decorative Figures",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_Uci7Ft": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Collection grid - Layer 2",
+          "settings": {
+            "section_title": "Decorative Objects",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_4MfEm3": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Collection grid - Layer 3",
+          "settings": {
+            "section_title": "Hand Carved Skulls by Master Artisans",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_4exThk": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Collection grid - Layer 4",
+          "settings": {
+            "section_title": "Hand-crafted Wire Art Sculpture",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_Mkr6c4": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Collection grid - Layer 4",
+          "settings": {
+            "section_title": "Toy Art & Collectible",
             "collection": "decorative-figures",
             "product_limit": 8,
             "show_view_all": true
@@ -122,7 +167,11 @@
         }
       },
       "block_order": [
-        "ai_gen_block_2bfa6a2_VYhxqA"
+        "ai_gen_block_2bfa6a2_VYhxqA",
+        "ai_gen_block_2bfa6a2_Uci7Ft",
+        "ai_gen_block_2bfa6a2_4MfEm3",
+        "ai_gen_block_2bfa6a2_4exThk",
+        "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
       "settings": {}
     },
