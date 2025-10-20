@@ -1,0 +1,396 @@
+{%- style -%}
+  /* Dynamic section background & padding */
+  .featured-collection-grid-{{ section.id }} {
+    padding: {{ section.settings.section_padding }}px 20px;
+    background-color: 
+      {% case section.settings.background_color %}
+        {% when 'light' %} #f8f8f8;
+        {% when 'dark' %} #4a4a4a;
+        {% else %} #ffffff;
+      {% endcase %};
+  }
+
+  /* Hide on mobile/desktop toggles */
+  @media screen and (max-width: 749px) {
+    .featured-collection-grid-{{ section.id }} .hidden-mobile { 
+      display: none !important; 
+    }
+  }
+  
+  @media screen and (min-width: 750px) {
+    .featured-collection-grid-{{ section.id }} .hidden-desktop { 
+      display: none !important; 
+    }
+  }
+
+  .featured-collection-grid__container-{{ section.id }} {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .featured-collection-grid__header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .featured-collection-grid__title-{{ section.id }} {
+    {% case section.settings.title_font_size %}
+      {% when 'sm' %} font-size: 24px;
+      {% when 'lg' %} font-size: 40px;
+      {% else %} font-size: 32px;
+    {% endcase %}
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+    margin: 0;
+  }
+
+  .featured-collection-grid__grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .featured-collection-grid__grid-{{ section.id }} {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+
+  .featured-collection-grid__card-{{ section.id }} {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  {% if section.settings.enable_hover_zoom %}
+    .featured-collection-grid__card-{{ section.id }} img {
+      transition: transform 0.4s ease;
+    }
+    
+    .featured-collection-grid__card-{{ section.id }}:hover img {
+      transform: scale(1.05);
+    }
+  {% endif %}
+
+  .featured-collection-grid__card-{{ section.id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .featured-collection-grid__image-wrapper-{{ section.id }} {
+    position: relative;
+    width: {{ section.settings.grid_card_width }}%;
+    padding-bottom: {{ section.settings.grid_card_height }}%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .featured-collection-grid__image-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .featured-collection-grid__placeholder-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-collection-grid__placeholder-{{ section.id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .featured-collection-grid__badge-{{ section.id }} {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 40px;
+    z-index: 1;
+  }
+
+  .featured-collection-grid__badge--sale-{{ section.id }} {
+    background-color: #c0c0c0;
+    color: #4a4a4a;
+  }
+
+  .featured-collection-grid__badge--sold-out-{{ section.id }} {
+    background-color: #4a4a4a;
+    color: #e5e5e5;
+  }
+
+  .featured-collection-grid__info-{{ section.id }} {
+    padding: 16px;
+    text-align: left;
+  }
+
+  .featured-collection-grid__product-title-{{ section.id }} {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4a4a4a;
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+
+  .featured-collection-grid__product-link-{{ section.id }} {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .featured-collection-grid__product-link-{{ section.id }}:hover .featured-collection-grid__product-title-{{ section.id }} {
+    color: #8c8c8c;
+  }
+
+  .featured-collection-grid__price-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .featured-collection-grid__price-regular-{{ section.id }} {
+    color: #4a4a4a;
+    font-weight: 500;
+  }
+
+  .featured-collection-grid__price-compare-{{ section.id }} {
+    color: #a0a0a0;
+    text-decoration: line-through;
+    font-size: 13px;
+  }
+
+  .featured-collection-grid__footer-{{ section.id }} {
+    text-align: center;
+  }
+
+  .featured-collection-grid__button-{{ section.id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #8c8c8c;
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+
+  .featured-collection-grid__button-{{ section.id }}:hover {
+    background-color: #4a4a4a;
+  }
+
+  .featured-collection-grid__empty-{{ section.id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a0a0a0;
+    font-style: italic;
+  }
+{%- endstyle -%}
+
+<div class="featured-collection-grid-{{ section.id }}" {{ section.shopify_attributes }}>
+  <div class="featured-collection-grid__container-{{ section.id }}">
+    {%- if section.settings.section_title != blank -%}
+      <div class="featured-collection-grid__header-{{ section.id }}">
+        <h2 class="featured-collection-grid__title-{{ section.id }}">{{ section.settings.section_title }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.collection != blank -%}
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- assign product_limit = section.settings.product_limit -%}
+
+      {%- if collection.products.size > 0 -%}
+        <div class="featured-collection-grid__grid-{{ section.id }}">
+          {%- for product in collection.products limit: product_limit -%}
+            <div class="featured-collection-grid__card-{{ section.id }}">
+              <a href="{{ product.url }}" class="featured-collection-grid__product-link-{{ section.id }}">
+                <div class="featured-collection-grid__image-wrapper-{{ section.id }}">
+                  {%- if product.featured_image -%}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 300 }}"
+                      alt="{{ product.title | escape }}"
+                      class="featured-collection-grid__image-{{ section.id }}"
+                      loading="lazy"
+                      width="300"
+                      height="450"
+                    >
+                  {%- else -%}
+                    <div class="featured-collection-grid__placeholder-{{ section.id }}">
+                      {{ 'product-1' | placeholder_svg_tag }}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if product.available == false -%}
+                    <span class="featured-collection-grid__badge-{{ section.id }} featured-collection-grid__badge--sold-out-{{ section.id }}">
+                      {{ 'products.product.sold_out' | t }}
+                    </span>
+                  {%- elsif product.compare_at_price > product.price -%}
+                    <span class="featured-collection-grid__badge-{{ section.id }} featured-collection-grid__badge--sale-{{ section.id }}">
+                      {{ 'products.product.sale' | t }}
+                    </span>
+                  {%- endif -%}
+                </div>
+
+                <div class="featured-collection-grid__info-{{ section.id }}">
+                  <h3 class="featured-collection-grid__product-title-{{ section.id }}">{{ product.title }}</h3>
+                  <div class="featured-collection-grid__price-{{ section.id }}">
+                    <span class="featured-collection-grid__price-regular-{{ section.id }}">
+                      {{ product.price | money }}
+                    </span>
+                    {%- if product.compare_at_price > product.price -%}
+                      <span class="featured-collection-grid__price-compare-{{ section.id }}">
+                        {{ product.compare_at_price | money }}
+                      </span>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if section.settings.show_view_all -%}
+          <div class="featured-collection-grid__footer-{{ section.id }}">
+            <a href="{{ collection.url }}" class="featured-collection-grid__button-{{ section.id }}">
+              {{ 'collections.general.view_all' | t }}
+            </a>
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        <div class="featured-collection-grid__empty-{{ section.id }}">
+          {{ section.settings.empty_state_text | default: 'This collection is empty. Add products to display them here.' }}
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="featured-collection-grid__empty-{{ section.id }}">
+        {{ 'Select a collection to display products.' }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Collection Grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Decorative Figures"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 2,
+      "max": 16,
+      "step": 2,
+      "label": "Product limit",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "options": [
+        { "value": "white", "label": "White" },
+        { "value": "light", "label": "Light gray" },
+        { "value": "dark", "label": "Dark gray" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding (px)",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "options": [
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" }
+      ],
+      "default": "md"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_zoom",
+      "label": "Enable hover zoom effect on product images",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "empty_state_text",
+      "label": "Empty state message",
+      "default": "This collection is empty. Add products to display them here."
+    },
+    {
+      "type": "range",
+      "id": "grid_card_width",
+      "label": "Grid card width (%)",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "grid_card_height",
+      "label": "Grid card height ratio (%)",
+      "min": 100,
+      "max": 200,
+      "step": 10,
+      "default": 150,
+      "unit": "%"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection Grid — Decorative Figures",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
