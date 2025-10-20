@@ -16,6 +16,8 @@
           "type": "slide",
           "name": "Slide 1 passed",
           "settings": {
+            "hide_on_mobile": false,
+            "hide_on_desktop": true,
             "image": "shopify://shop_images/Hero_Banner_1e.png",
             "heading": "Welcome to Casa.MNL",
             "heading_size": "h2",
@@ -35,6 +37,8 @@
           "type": "slide",
           "name": "Slide 2 passed",
           "settings": {
+            "hide_on_mobile": false,
+            "hide_on_desktop": false,
             "image": "shopify://shop_images/Hero_Banner_2.png",
             "heading": "Premium Wire Art",
             "heading_size": "h2",
@@ -54,6 +58,8 @@
           "type": "slide",
           "name": "Slide 3 review",
           "settings": {
+            "hide_on_mobile": false,
+            "hide_on_desktop": false,
             "image": "shopify://shop_images/Hero_Banner_3.png",
             "heading": "Casa.MNL",
             "heading_size": "h1",
@@ -73,6 +79,8 @@
           "type": "slide",
           "name": "Slide 4",
           "settings": {
+            "hide_on_mobile": false,
+            "hide_on_desktop": false,
             "image": "shopify://shop_images/Hero_Banner_1.png",
             "heading": "Home Art Decor",
             "heading_size": "h1",
