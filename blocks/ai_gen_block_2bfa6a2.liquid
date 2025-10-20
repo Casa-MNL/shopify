@@ -263,12 +263,12 @@
                 <div class="ai-featured-collection__image-wrapper-{{ ai_gen_id }}">
                   {% if product.featured_image %}
                     <img
-                      src="{{ product.featured_image | image_url: width: 600 }}"
+                      src="{{ product.featured_image | image_url: width: 300 }}"
                       alt="{{ product.title | escape }}"
                       class="ai-featured-collection__image-{{ ai_gen_id }}"
                       loading="lazy"
-                      width="600"
-                      height="900"
+                      width="300"
+                      height="450"
                     >
                   {% else %}
                     <div class="ai-featured-collection__placeholder-{{ ai_gen_id }}">
