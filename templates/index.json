@@ -36,9 +36,9 @@
           "name": "Slide 2 passed",
           "settings": {
             "image": "shopify://shop_images/Hero_Banner_2.png",
-            "heading": "More than a Decor",
+            "heading": "Premium Wire Art",
             "heading_size": "h2",
-            "subheading": "—<em>it’s an Art that speaks, connect and inspire..</em>",
+            "subheading": "Tap to see the Collections",
             "button_label": "Shop Now",
             "link": "shopify://collections/decorative-figures",
             "button_style_secondary": true,
