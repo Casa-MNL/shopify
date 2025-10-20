@@ -107,6 +107,33 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Featured Collection</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "decorative-figures",
+        "products_to_show": 10,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "17609479301973fede": {
       "type": "_blocks",
       "blocks": {
@@ -174,33 +201,6 @@
         "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
       "settings": {}
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "<strong>Featured Collection</strong>",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "decorative-figures",
-        "products_to_show": 10,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": true,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     },
     "f1552b18-6017-4231-810d-74e61da22c37": {
       "type": "image-with-text",
@@ -379,8 +379,8 @@
   },
   "order": [
     "slideshow_CxbX3j",
-    "17609479301973fede",
     "featured_collection",
+    "17609479301973fede",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "image_with_text_xHPCni",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
