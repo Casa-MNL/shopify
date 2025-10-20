@@ -115,7 +115,7 @@
         "description": "",
         "show_description": true,
         "description_style": "body",
-        "collection": "automated-collection",
+        "collection": "new-collection",
         "products_to_show": 10,
         "columns_desktop": 3,
         "full_width": false,
@@ -191,7 +191,7 @@
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "automated-collection"
+            "collection": "new-collection"
           }
         }
       },
