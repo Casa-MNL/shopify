@@ -164,7 +164,11 @@
         "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1",
         "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".image-with-text--small {max-width: 800px; margin: 0 auto; padding: 20px 0;}",
+        ".image-with-text--medium {max-width: 1200px; margin: 0 auto; padding: 40px 0;}",
+        ".image-with-text--large {max-width: 1600px; margin: 0 auto; padding: 60px 0;}"
+      ],
       "settings": {
         "image": "shopify://shop_images/Hero_Banner_1.png",
         "height": "adapt",
