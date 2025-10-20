@@ -152,7 +152,14 @@
             "section_title": "Decorative Figures",
             "collection": "decorative-figures",
             "product_limit": 8,
-            "show_view_all": true
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "sm",
+            "enable_hover_zoom": false,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 80,
+            "grid_card_height": 100
           },
           "blocks": {}
         },
@@ -163,7 +170,14 @@
             "section_title": "Decorative Objects",
             "collection": "decorative-figures",
             "product_limit": 8,
-            "show_view_all": true
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
           },
           "blocks": {}
         },
@@ -174,7 +188,14 @@
             "section_title": "Hand Carved Skulls by Master Artisans",
             "collection": "decorative-figures",
             "product_limit": 8,
-            "show_view_all": true
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
           },
           "blocks": {}
         },
@@ -185,7 +206,14 @@
             "section_title": "Hand-crafted Wire Art Sculpture",
             "collection": "decorative-figures",
             "product_limit": 8,
-            "show_view_all": true
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
           },
           "blocks": {}
         },
@@ -196,7 +224,14 @@
             "section_title": "Toy Art & Collectible",
             "collection": "decorative-figures",
             "product_limit": 8,
-            "show_view_all": true
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
           },
           "blocks": {}
         }
