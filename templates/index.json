@@ -107,10 +107,29 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "17609479301973fede": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2bfa6a2_VYhxqA": {
+          "type": "ai_gen_block_2bfa6a2",
+          "settings": {
+            "section_title": "Decorative Figures",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2bfa6a2_VYhxqA"
+      ],
+      "settings": {}
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "<strong>Home Art Decor</strong>",
+        "title": "<strong>Featured Collection</strong>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -311,6 +330,7 @@
   },
   "order": [
     "slideshow_CxbX3j",
+    "17609479301973fede",
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "image_with_text_xHPCni",
