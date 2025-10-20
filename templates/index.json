@@ -145,6 +145,24 @@
     "17609479301973fede": {
       "type": "_blocks",
       "blocks": {
+        "main_block_prMiEc": {
+          "type": "main_block",
+          "name": "Featured Collection Grid",
+          "settings": {
+            "section_title": "Decorative Figures",
+            "collection": "decorative-figures",
+            "product_limit": 8,
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "",
+            "grid_card_width": 100,
+            "grid_card_height": 150
+          },
+          "blocks": {}
+        },
         "ai_gen_block_2bfa6a2_VYhxqA": {
           "type": "ai_gen_block_2bfa6a2",
           "name": "Collection grid - Layer 1",
@@ -237,6 +255,7 @@
         }
       },
       "block_order": [
+        "main_block_prMiEc",
         "ai_gen_block_2bfa6a2_VYhxqA",
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_4MfEm3",
