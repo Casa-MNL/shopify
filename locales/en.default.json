@@ -180,11 +180,6 @@
       "include_taxes": "Tax included.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout."
     },
-    "collections": {
-      "general": {
-        "view_all": "View All"
-      }
-    },
     "modal": {
       "label": "Media gallery"
     },
@@ -217,6 +212,11 @@
       "sort_by_label": "Sort by:",
       "to": "To",
       "clear_filter": "Remove filter"
+    }
+  },
+  "collections": {
+    "general": {
+      "view_all": "View All"
     }
   },
   "templates": {

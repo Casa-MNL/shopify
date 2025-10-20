@@ -181,11 +181,6 @@
       "inventory_out_of_stock_continue_selling": "En existencias",
       "sku": "SKU"
     },
-    "collections": {
-      "general": {
-        "view_all": "View All"
-      }
-    },
     "modal": {
       "label": "Galería multimedia"
     },
@@ -221,6 +216,11 @@
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtros seleccionados)",
       "show_more": "Mostrar más",
       "show_less": "Mostrar menos"
+    }
+  },
+  "collections": {
+    "general": {
+      "view_all": "View All"
     }
   },
   "templates": {
