@@ -145,24 +145,6 @@
     "17609479301973fede": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_2bfa6a2_cX6FxL": {
-          "type": "ai_gen_block_2bfa6a2",
-          "name": "Featured Collection Grid",
-          "settings": {
-            "section_title": "Decorative Figures",
-            "collection": "decorative-figures",
-            "product_limit": 2,
-            "show_view_all": true,
-            "background_color": "light",
-            "section_padding": 0,
-            "title_font_size": "md",
-            "enable_hover_zoom": true,
-            "empty_state_text": "This collection is empty. Add products to display them here.",
-            "grid_card_width": 100,
-            "grid_card_height": 150
-          },
-          "blocks": {}
-        },
         "ai_gen_block_2bfa6a2_VYhxqA": {
           "type": "ai_gen_block_2bfa6a2",
           "name": "Collection grid - Layer 1",
@@ -255,7 +237,6 @@
         }
       },
       "block_order": [
-        "ai_gen_block_2bfa6a2_cX6FxL",
         "ai_gen_block_2bfa6a2_VYhxqA",
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_4MfEm3",
