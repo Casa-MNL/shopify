@@ -116,6 +116,10 @@
   },
   "products": {
     "product": {
+      "sale": "Sale", 
+      "selling_plans": {
+        "one_time_purchase": "One-time purchase"
+      },
       "add_to_cart": "Agregar al carrito",
       "description": "Descripción",
       "on_sale": "Oferta",
@@ -137,7 +141,6 @@
         "unit_price": "Precio unitario"
       },
       "share": "Compartir este producto",
-      "sale": "Sale", 
       "sold_out": "Agotado",
       "unavailable": "No disponible",
       "vendor": "Proveedor",
@@ -177,7 +180,12 @@
       "inventory_out_of_stock": "Agotado",
       "inventory_out_of_stock_continue_selling": "En existencias",
       "sku": "SKU"
-    }, 
+    },
+    "collections": {
+      "general": {
+        "view_all": "View All"
+      }
+    },
     "modal": {
       "label": "Galería multimedia"
     },
