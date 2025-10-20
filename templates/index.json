@@ -185,7 +185,7 @@
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "decorative-figures"
+            "collection": "hydrogen"
           }
         },
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1": {
@@ -211,12 +211,51 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collage_BEd8Fb": {
+      "type": "collage",
+      "blocks": {
+        "image_yNm9fL": {
+          "type": "image",
+          "settings": {}
+        },
+        "product_fFGxht": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
+        },
+        "collection_9c9mEL": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_yNm9fL",
+        "product_fFGxht",
+        "collection_9c9mEL"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Featured Content",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "slideshow_CxbX3j",
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
-    "38cdf60f-e431-43b5-aac3-7e6215447d67"
+    "38cdf60f-e431-43b5-aac3-7e6215447d67",
+    "collage_BEd8Fb"
   ]
 }
