@@ -217,6 +217,7 @@
       "blocks": {
         "image_yNm9fL": {
           "type": "image",
+          "name": "Golden Tiger",
           "settings": {
             "image": "shopify://shop_images/featured_item_1b.jpg"
           }
