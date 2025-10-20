@@ -1,3 +1,6 @@
+
+{% assign section.id = block.id | replace: '_', '' | downcase %}
+
 {%- style -%}
   /* Dynamic section background & padding */
   .featured-collection-grid-{{ section.id }} {
