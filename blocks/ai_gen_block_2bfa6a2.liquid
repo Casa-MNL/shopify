@@ -241,10 +241,32 @@
     color: #a0a0a0;
     font-style: italic;
   }
+
+  .ai-featured-collection__image-wrapper-{{ ai_gen_id }} {
+    width: {{ section.settings.grid_card_width }}%;
+    padding-bottom: {{ section.settings.grid_card_height }}%;
+  }
+
 {% endstyle %}
 
+{% comment %}
 <div class="ai-featured-collection-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-featured-collection__container-{{ ai_gen_id }}">
+{% endcomment %}
+
+<div class="ai-featured-collection-{{ ai_gen_id }}
+bg-{{ section.settings.background_color }}"
+style="padding: {{ section.settings.section_padding }}px;"
+{% if section.settings.enable_hover_zoom %}
+  .ai-featured-collection__card-{{ ai_gen_id }} img {
+    transition: transform 0.4s ease;
+  }
+  .ai-featured-collection__card-{{ ai_gen_id }}:hover img {
+    transform: scale(1.05);
+  }
+{% endif %}
+> 
+ 
+<div class="ai-featured-collection__container-{{ ai_gen_id }}">
     {% if block.settings.section_title != blank %}
       <div class="ai-featured-collection__header-{{ ai_gen_id }}">
         <h2 class="ai-featured-collection__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
@@ -327,8 +349,7 @@
 
 {% schema %}
 {
-  "name": "Featured collection grid",
-  "tag": null,
+  "name": "Featured Collection Grid",
   "settings": [
     {
       "type": "text",
@@ -353,13 +374,89 @@
     {
       "type": "checkbox",
       "id": "show_view_all",
-      "label": "Show view all button",
+      "label": "Show 'View all' button",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "options": [
+        { "value": "white", "label": "White" },
+        { "value": "light", "label": "Light gray" },
+        { "value": "dark", "label": "Dark gray" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding (px)",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide section on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide section on desktop",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "options": [
+        { "value": "sm", "label": "Small" },
+        { "value": "md", "label": "Medium" },
+        { "value": "lg", "label": "Large" }
+      ],
+      "default": "md"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_zoom",
+      "label": "Enable hover zoom effect on product images",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "empty_state_text",
+      "label": "Empty state message",
+      "default": "This collection is empty. Add products to display them here."
+    },
+    {
+      "type": "range",
+      "id": "grid_card_width",
+      "label": "Grid card width (%)",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "grid_card_height",
+      "label": "Grid card height ratio (%)",
+      "min": 100,
+      "max": 200,
+      "step": 10,
+      "default": 150,
+      "unit": "%"
     }
   ],
   "presets": [
     {
-      "name": "Featured collection grid"
+      "name": "Featured Collection Grid — Decorative Figures",
+      "category": "Collection"
     }
   ]
 }
