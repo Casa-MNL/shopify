@@ -217,7 +217,9 @@
       "blocks": {
         "image_yNm9fL": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/featured_item_1b.jpg"
+          }
         },
         "product_fFGxht": {
           "type": "product",
