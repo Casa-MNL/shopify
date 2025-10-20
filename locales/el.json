@@ -180,11 +180,6 @@
       "inventory_out_of_stock_continue_selling": "Σε απόθεμα",
       "sku": "SKU"
     },
-    "collections": {
-      "general": {
-        "view_all": "View All"
-      }
-    },
     "modal": {
       "label": "Συλλογή μέσων"
     },
@@ -217,6 +212,11 @@
       "filter_selected_accessibility": "{{ type }} (επιλέχθηκαν {{ count }} φίλτρα)",
       "show_more": "Εμφάνιση περισσότερων",
       "show_less": "Εμφάνιση λιγότερων"
+    }
+  },
+  "collections": {
+    "general": {
+      "view_all": "View All"
     }
   },
   "templates": {
