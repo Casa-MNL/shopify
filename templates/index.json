@@ -126,7 +126,7 @@
           "name": "Collection grid - Layer 2",
           "settings": {
             "section_title": "Decorative Objects",
-            "collection": "decorative-figures",
+            "collection": "decorative-objects",
             "product_limit": 8,
             "show_view_all": true
           },
