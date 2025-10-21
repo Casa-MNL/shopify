@@ -176,7 +176,7 @@
             "title_font_size": "sm",
             "enable_hover_zoom": false,
             "empty_state_text": "This collection is empty. Add products to display them here.",
-            "grid_card_width": 25,
+            "grid_card_width": 20,
             "grid_card_height": 100
           },
           "blocks": {}
