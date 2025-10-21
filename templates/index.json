@@ -206,6 +206,7 @@
         "slide_MBLYtb": {
           "type": "slide",
           "name": "Slide 5",
+          "disabled": true,
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
