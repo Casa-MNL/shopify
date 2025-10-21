@@ -163,8 +163,8 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2bfa6a2_VYhxqA": {
-          "type": "ai_gen_block_2bfa6a2",
+        "main_block_VYhxqA": {
+          "type": "main_block",
           "name": "Collection grid - Layer 1",
           "settings": {
             "section_title": "Decorative Figures",
@@ -256,7 +256,6 @@
       },
       "block_order": [
         "main_block_prMiEc",
-        "ai_gen_block_2bfa6a2_VYhxqA",
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_4MfEm3",
         "ai_gen_block_2bfa6a2_4exThk",
