@@ -143,6 +143,7 @@
         "slide_JcNWfR": {
           "type": "slide",
           "name": "Slide 2 passed",
+          "disabled": true,
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
@@ -164,6 +165,7 @@
         "slide_fLBNJF": {
           "type": "slide",
           "name": "Slide 3 review",
+          "disabled": true,
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": true,
@@ -185,6 +187,7 @@
         "slide_xqTPHK": {
           "type": "slide",
           "name": "Slide 4",
+          "disabled": true,
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
