@@ -294,7 +294,7 @@
         },
         "ai_gen_block_2bfa6a2_Uci7Ft": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Collection grid - Layer 2",
+          "name": "Decorative Figures - Layer 1",
           "settings": {
             "section_title": "Decorative Figures",
             "collection": "decorative-figures",
@@ -312,7 +312,7 @@
         },
         "ai_gen_block_2bfa6a2_B9gT6n": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Collection grid - Layer 2",
+          "name": "Decorative Objects - Layer 2",
           "settings": {
             "section_title": "Decorative Objects",
             "collection": "decorative-figures",
@@ -330,7 +330,7 @@
         },
         "ai_gen_block_2bfa6a2_4MfEm3": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Collection grid - Layer 3",
+          "name": "Hand Carved Skulls by Master Artisans - Layer 3",
           "settings": {
             "section_title": "Hand Carved Skulls by Master Artisans",
             "collection": "decorative-figures",
@@ -348,7 +348,7 @@
         },
         "ai_gen_block_2bfa6a2_4exThk": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Collection grid - Layer 4",
+          "name": "Hand-crafted Wire Art Sculpture - Layer 4",
           "settings": {
             "section_title": "Hand-crafted Wire Art Sculpture",
             "collection": "decorative-figures",
@@ -366,7 +366,7 @@
         },
         "ai_gen_block_2bfa6a2_Mkr6c4": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Collection grid - Layer 4",
+          "name": "Toy Art & Collectible - Layer 4",
           "settings": {
             "section_title": "Toy Art & Collectible",
             "collection": "decorative-figures",
