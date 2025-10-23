@@ -187,7 +187,7 @@
           "name": "Slide 5",
           "settings": {
             "hide_on_mobile": false,
-            "hide_on_desktop": false,
+            "hide_on_desktop": true,
             "image": "shopify://shop_images/Hero_Banner_9.png",
             "heading": "Modern Pop-Art",
             "heading_size": "h1",
