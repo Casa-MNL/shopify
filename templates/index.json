@@ -328,11 +328,11 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2bfa6a2_4MfEm3": {
+        "ai_gen_block_2bfa6a2_4exThk": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Hand Carved Skulls by Master Artisans - Layer 3",
+          "name": "Hand-crafted Wire Art Sculpture - Layer 3",
           "settings": {
-            "section_title": "Hand Carved Skulls by Master Artisans",
+            "section_title": "Hand-crafted Wire Art Sculpture",
             "collection": "decorative-figures",
             "product_limit": 8,
             "show_view_all": true,
@@ -346,12 +346,12 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2bfa6a2_4exThk": {
+        "ai_gen_block_2bfa6a2_4MfEm3": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Hand-crafted Wire Art Sculpture - Layer 4",
+          "name": "Hand Carved Skulls by Master Artisans - Layer 4",
           "settings": {
-            "section_title": "Hand-crafted Wire Art Sculpture",
-            "collection": "decorative-figures",
+            "section_title": "Hand Carved Skulls by Master Artisans",
+            "collection": "hand-carved-skulls-by-master-artisans",
             "product_limit": 8,
             "show_view_all": true,
             "background_color": "white",
@@ -387,8 +387,8 @@
         "main_block_prMiEc",
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
-        "ai_gen_block_2bfa6a2_4MfEm3",
         "ai_gen_block_2bfa6a2_4exThk",
+        "ai_gen_block_2bfa6a2_4MfEm3",
         "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
       "settings": {}
