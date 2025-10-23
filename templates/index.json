@@ -136,7 +136,7 @@
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
+            "color_scheme": "accent-1",
             "text_alignment_mobile": "center"
           }
         },
@@ -157,7 +157,7 @@
             "show_text_box": false,
             "text_alignment": "right",
             "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
+            "color_scheme": "accent-1",
             "text_alignment_mobile": "center"
           }
         },
@@ -178,7 +178,7 @@
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
+            "color_scheme": "accent-1",
             "text_alignment_mobile": "center"
           }
         },
@@ -189,9 +189,9 @@
             "hide_on_mobile": false,
             "hide_on_desktop": false,
             "image": "shopify://shop_images/Hero_Banner_9.png",
-            "heading": "",
+            "heading": "Modern Pop-Art",
             "heading_size": "h1",
-            "subheading": "Tap to see Full Collection",
+            "subheading": "<em>Tap to see Full Collection</em>",
             "button_label": "Shop All",
             "link": "shopify://collections",
             "button_style_secondary": false,
@@ -199,7 +199,7 @@
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
+            "color_scheme": "accent-1",
             "text_alignment_mobile": "center"
           }
         },
