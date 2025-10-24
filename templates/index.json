@@ -349,13 +349,13 @@
           "name": "Featured Collection Grid",
           "settings": {
             "section_title": "Decorative Figures",
-            "collection": "decorative-figures",
+            "collection": "",
             "product_limit": 8,
             "show_view_all": true,
             "background_color": "white",
             "section_padding": 60,
             "title_font_size": "md",
-            "enable_hover_zoom": true,
+            "enable_hover_zoom": false,
             "empty_state_text": "",
             "grid_card_width": 100,
             "grid_card_height": 150
