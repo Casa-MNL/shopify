@@ -10,52 +10,61 @@
 {%- endif -%}
 
 {%- style -%}
+  .collections-grid-container {
+    max-width: 80%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .collections-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem; /* Reduced from 5rem for better balance */
-    margin-bottom: 4rem; /* Reduced from 5rem */
+    gap: 3rem;
+    margin-bottom: 4rem;
   }
   
   .collection-card {
-    border: 1px solid rgba(var(--color-foreground), 0.08); /* Softer border */
-    border-radius: 12px; /* Slightly more rounded */
-    padding: 2.5rem; /* Reduced from 4rem */
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    border-radius: 12px;
+    padding: 2.5rem;
     background: rgba(var(--color-background));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Subtle shadow for depth */
-    transition: all 0.2s ease; /* Smooth interactions */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
   }
 
   .collection-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Enhanced shadow on hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
   }
   
   .collection-card__title {
     text-align: center;
-    margin-bottom: 2rem; /* Increased for better spacing */
+    margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.08); /* Softer border */
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
   }
 
   .collection-card__title h3 {
-    margin: 0 0 0.5rem 0; /* Clean heading margins */
-    font-weight: 600; /* Better hierarchy */
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
   }
   
   .collection-card__products {
     display: grid;
-    gap: 1.5rem; /* Increased for better product separation */
-    grid-template-columns: 1fr; /* Single column for products */
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
 
-  /* Better product card spacing within collection */
   .collection-card__products .card-wrapper {
     margin: 0;
   }
 
-  /* Improved responsive design */
+  /* Responsive design with centered 80% width */
   @media screen and (max-width: 989px) {
+    .collections-grid-container {
+      max-width: 90%; /* Slightly wider on tablet for better use of space */
+    }
+    
     .collections-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -68,6 +77,10 @@
   }
   
   @media screen and (max-width: 749px) {
+    .collections-grid-container {
+      max-width: 95%; /* Almost full width on mobile */
+    }
+    
     .collections-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -86,6 +99,13 @@
 
     .collection-card__products {
       gap: 1rem;
+    }
+  }
+
+  /* For very large screens, you might want to limit the max-width */
+  @media screen and (min-width: 1440px) {
+    .collections-grid-container {
+      max-width: 1200px; /* Optional: fixed max-width on very large screens */
     }
   }
   
