@@ -305,7 +305,7 @@
           "type": "featured_collection",
           "name": "Decorative Figures",
           "settings": {
-            "collection": "decorative-figures",
+            "collection": "all",
             "products_to_show": 1,
             "show_description": false,
             "show_view_all": true
