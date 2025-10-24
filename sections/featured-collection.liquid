@@ -13,38 +13,79 @@
   .collections-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5rem;
-    margin-bottom: 5rem;
+    gap: 3rem; /* Reduced from 5rem for better balance */
+    margin-bottom: 4rem; /* Reduced from 5rem */
   }
   
   .collection-card {
-    border: 1px solid rgba(var(--color-foreground), 0.1);
-    border-radius: 8px;
-    padding: 4rem;
+    border: 1px solid rgba(var(--color-foreground), 0.08); /* Softer border */
+    border-radius: 12px; /* Slightly more rounded */
+    padding: 2.5rem; /* Reduced from 4rem */
     background: rgba(var(--color-background));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Subtle shadow for depth */
+    transition: all 0.2s ease; /* Smooth interactions */
+  }
+
+  .collection-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
   }
   
   .collection-card__title {
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(var(--color-foreground), 0.1);
+    margin-bottom: 2rem; /* Increased for better spacing */
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08); /* Softer border */
+  }
+
+  .collection-card__title h3 {
+    margin: 0 0 0.5rem 0; /* Clean heading margins */
+    font-weight: 600; /* Better hierarchy */
   }
   
   .collection-card__products {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem; /* Increased for better product separation */
+    grid-template-columns: 1fr; /* Single column for products */
   }
-  
+
+  /* Better product card spacing within collection */
+  .collection-card__products .card-wrapper {
+    margin: 0;
+  }
+
+  /* Improved responsive design */
   @media screen and (max-width: 989px) {
     .collections-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .collection-card {
+      padding: 2rem;
     }
   }
   
   @media screen and (max-width: 749px) {
     .collections-grid {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .collection-card {
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .collection-card__title {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .collection-card__products {
+      gap: 1rem;
     }
   }
   
