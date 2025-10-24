@@ -362,13 +362,31 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_2bfa6a2_Uci7Ft": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Decorative Figures - Layer 1",
+          "settings": {
+            "section_title": "Others",
+            "collection": "decorative-figures",
+            "product_limit": 4,
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 120,
+            "title_font_size": "md",
+            "enable_hover_zoom": false,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
+          },
+          "blocks": {}
+        },
         "ai_gen_block_2bfa6a2_B9gT6n": {
           "type": "ai_gen_block_2bfa6a2",
           "name": "Decorative Objects - Layer 2",
           "settings": {
             "section_title": "Decorative Objects",
-            "collection": "decorative-figures",
-            "product_limit": 8,
+            "collection": "decorative-objects",
+            "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
             "section_padding": 120,
@@ -385,8 +403,8 @@
           "name": "Hand-crafted Wire Art Sculpture - Layer 3",
           "settings": {
             "section_title": "Hand-crafted Wire Art Sculpture",
-            "collection": "decorative-figures",
-            "product_limit": 8,
+            "collection": "hand-crafted-wire-art-sculpture",
+            "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
             "section_padding": 60,
@@ -404,7 +422,7 @@
           "settings": {
             "section_title": "Hand Carved Skulls by Master Artisans",
             "collection": "hand-carved-skulls-by-master-artisans",
-            "product_limit": 8,
+            "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
             "section_padding": 60,
@@ -421,7 +439,7 @@
           "name": "Toy Art & Collectible - Layer 4",
           "settings": {
             "section_title": "Toy Art & Collectible",
-            "collection": "decorative-figures",
+            "collection": "toy-art-collectibles",
             "product_limit": 8,
             "show_view_all": true,
             "background_color": "white",
@@ -433,33 +451,15 @@
             "grid_card_height": 150
           },
           "blocks": {}
-        },
-        "ai_gen_block_2bfa6a2_Uci7Ft": {
-          "type": "ai_gen_block_2bfa6a2",
-          "name": "Decorative Figures - Layer 5",
-          "settings": {
-            "section_title": "Others",
-            "collection": "category",
-            "product_limit": 8,
-            "show_view_all": true,
-            "background_color": "white",
-            "section_padding": 120,
-            "title_font_size": "md",
-            "enable_hover_zoom": false,
-            "empty_state_text": "This collection is empty. Add products to display them here.",
-            "grid_card_width": 100,
-            "grid_card_height": 150
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "main_block_prMiEc",
+        "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
         "ai_gen_block_2bfa6a2_4exThk",
         "ai_gen_block_2bfa6a2_4MfEm3",
-        "ai_gen_block_2bfa6a2_Mkr6c4",
-        "ai_gen_block_2bfa6a2_Uci7Ft"
+        "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
       "settings": {}
     },
@@ -563,6 +563,63 @@
         "padding_bottom": 60
       }
     },
+    "multirow_ThX7rU": {
+      "type": "multirow",
+      "blocks": {
+        "row_NKCQPX": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_LXP9dT": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_P4rQ3L": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_NKCQPX",
+        "row_LXP9dT",
+        "row_P4rQ3L"
+      ],
+      "disabled": true,
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "background-1",
+        "row_color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "38cdf60f-e431-43b5-aac3-7e6215447d67": {
       "type": "collection-list",
       "blocks": {
@@ -583,6 +640,7 @@
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0",
         "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1"
       ],
+      "disabled": true,
       "settings": {
         "title": "<strong>Collections</strong>",
         "heading_size": "h1",
@@ -625,6 +683,7 @@
         "product_fFGxht",
         "collection_9c9mEL"
       ],
+      "disabled": true,
       "name": "t:sections.collage.presets.name",
       "settings": {
         "heading": "Featured Content",
@@ -645,6 +704,7 @@
     "17609479301973fede",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "image_with_text_xHPCni",
+    "multirow_ThX7rU",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
     "collage_BEd8Fb"
   ]
