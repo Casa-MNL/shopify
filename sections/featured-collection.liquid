@@ -11,7 +11,7 @@
 
 {%- style -%}
   .collections-grid-container {
-    max-width: 80%;
+    max-width: {{ section.settings.container_width }}%;
     margin: 0 auto;
     width: 100%;
   }
@@ -19,29 +19,29 @@
   .collections-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: {{ section.settings.grid_gap }}rem;
     margin-bottom: 4rem;
   }
   
   .collection-card {
-    border: 1px solid rgba(var(--color-foreground), 0.08);
-    border-radius: 12px;
-    padding: 2.5rem;
+    border: 1px solid rgba(var(--color-foreground), {{ section.settings.border_opacity | divided_by: 100.0 }});
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: {{ section.settings.card_padding }}rem;
     background: rgba(var(--color-background));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
     transition: all 0.2s ease;
   }
 
   .collection-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, {{ section.settings.shadow_opacity | plus: 4 | divided_by: 100.0 }});
+    transform: translateY(-{{ section.settings.hover_lift }}px);
   }
   
   .collection-card__title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: {{ section.settings.title_spacing }}rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    border-bottom: 1px solid rgba(var(--color-foreground), {{ section.settings.border_opacity | divided_by: 100.0 }});
   }
 
   .collection-card__title h3 {
@@ -51,7 +51,7 @@
   
   .collection-card__products {
     display: grid;
-    gap: 1.5rem;
+    gap: {{ section.settings.product_gap }}rem;
     grid-template-columns: 1fr;
   }
 
@@ -59,10 +59,10 @@
     margin: 0;
   }
 
-  /* Responsive design with centered 80% width */
+  /* Responsive design */
   @media screen and (max-width: 989px) {
     .collections-grid-container {
-      max-width: 90%; /* Slightly wider on tablet for better use of space */
+      max-width: 90%;
     }
     
     .collections-grid {
@@ -78,7 +78,7 @@
   
   @media screen and (max-width: 749px) {
     .collections-grid-container {
-      max-width: 95%; /* Almost full width on mobile */
+      max-width: 95%;
     }
     
     .collections-grid {
@@ -102,10 +102,9 @@
     }
   }
 
-  /* For very large screens, you might want to limit the max-width */
   @media screen and (min-width: 1440px) {
     .collections-grid-container {
-      max-width: 1200px; /* Optional: fixed max-width on very large screens */
+      max-width: min({{ section.settings.container_width }}%, 1400px);
     }
   }
   
@@ -199,7 +198,7 @@
 
 {% schema %}
 {
-  "name": "Redefine Collections",
+  "name": "Featured Collections",
   "tag": "section",
   "class": "section",
   "max_blocks": 3,
@@ -211,7 +210,7 @@
       "type": "inline_richtext",
       "id": "title",
       "default": "Featured Collections",
-      "label": "t:sections.featured-collection.settings.title.label"
+      "label": "Section Title"
     },
     {
       "type": "select",
@@ -219,25 +218,82 @@
       "options": [
         {
           "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
+          "label": "Small"
         },
         {
           "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
+          "label": "Medium"
         },
         {
           "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
+          "label": "Large"
         }
       ],
       "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "label": "Heading Size"
     },
     {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "t:sections.featured-collection.settings.full_width.label",
-      "default": false
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 60,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Container Width",
+      "default": 80,
+      "info": "Width of the collections container"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "rem",
+      "label": "Grid Gap",
+      "default": 3,
+      "info": "Space between collection cards"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "rem",
+      "label": "Card Padding",
+      "default": 3,
+      "info": "Inner padding of collection cards"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 12,
+      "info": "Rounded corners of collection cards"
+    },
+    {
+      "type": "range",
+      "id": "border_opacity",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "label": "Border Opacity",
+      "default": 8,
+      "info": "Opacity of card borders (0 = invisible, 20 = visible)"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
     },
     {
       "type": "select",
@@ -245,31 +301,94 @@
       "options": [
         {
           "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
+          "label": "Accent 1"
         },
         {
           "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
+          "label": "Accent 2"
         },
         {
           "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
+          "label": "Background 1"
         },
         {
           "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
+          "label": "Background 2"
         },
         {
           "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "label": "Inverse"
         }
       ],
       "default": "background-1",
-      "label": "t:sections.all.colors.label"
+      "label": "Color Scheme"
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "label": "Shadow Intensity",
+      "default": 4,
+      "info": "Intensity of card shadows (0 = no shadow)"
     },
     {
       "type": "header",
-      "content": "Product card settings"
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "rem",
+      "label": "Title Bottom Spacing",
+      "default": 2,
+      "info": "Space below collection titles"
+    },
+    {
+      "type": "range",
+      "id": "product_gap",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "unit": "rem",
+      "label": "Product Gap",
+      "default": 2,
+      "info": "Space between products in cards"
+    },
+    {
+      "type": "header",
+      "content": "Animation Settings"
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Hover Lift Effect",
+      "default": 2,
+      "info": "How much cards lift on hover (0 = no effect)"
+    },
+    {
+      "type": "range",
+      "id": "hover_shadow_boost",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Hover Shadow Boost",
+      "default": 100,
+      "info": "How much shadow increases on hover"
+    },
+    {
+      "type": "header",
+      "content": "Product Card Settings"
     },
     {
       "type": "select",
@@ -277,47 +396,47 @@
       "options": [
         {
           "value": "adapt",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+          "label": "Adapt to image"
         },
         {
           "value": "portrait",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+          "label": "Portrait"
         },
         {
           "value": "square",
-          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+          "label": "Square"
         }
       ],
       "default": "adapt",
-      "label": "t:sections.featured-collection.settings.image_ratio.label"
+      "label": "Image Ratio"
     },
     {
       "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
-      "label": "t:sections.featured-collection.settings.show_secondary_image.label"
+      "label": "Show Secondary Image"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
       "default": false,
-      "label": "t:sections.featured-collection.settings.show_vendor.label"
+      "label": "Show Vendor"
     },
     {
       "type": "checkbox",
       "id": "show_rating",
       "default": false,
-      "label": "t:sections.featured-collection.settings.show_rating.label"
+      "label": "Show Rating"
     },
     {
       "type": "checkbox",
       "id": "enable_quick_add",
       "default": false,
-      "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+      "label": "Enable Quick Add"
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Section Spacing"
     },
     {
       "type": "range",
@@ -326,7 +445,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Padding Top",
       "default": 36
     },
     {
@@ -336,7 +455,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Padding Bottom",
       "default": 36
     }
   ],
@@ -348,28 +467,28 @@
         {
           "type": "collection",
           "id": "collection",
-          "label": "t:sections.featured-collection.settings.collection.label"
+          "label": "Collection"
         },
         {
           "type": "range",
           "id": "products_to_show",
-          "min": 1,
+          "min": 2,
           "max": 8,
           "step": 1,
           "default": 4,
-          "label": "Number of products to show"
+          "label": "Products to Show"
         },
         {
           "type": "checkbox",
           "id": "show_description",
-          "label": "Show collection description",
+          "label": "Show Collection Description",
           "default": false
         },
         {
           "type": "checkbox",
           "id": "show_view_all",
           "default": true,
-          "label": "t:sections.featured-collection.settings.show_view_all.label"
+          "label": "Show View All Button"
         }
       ]
     }
