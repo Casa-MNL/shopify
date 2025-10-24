@@ -310,11 +310,22 @@
             "show_description": false,
             "show_view_all": true
           }
+        },
+        "featured_collection_pbKPkH": {
+          "type": "featured_collection",
+          "name": "Sales",
+          "settings": {
+            "collection": "gardening",
+            "products_to_show": 2,
+            "show_description": true,
+            "show_view_all": true
+          }
         }
       },
       "block_order": [
         "featured_collection_UydNTa",
-        "featured_collection_UV6rde"
+        "featured_collection_UV6rde",
+        "featured_collection_pbKPkH"
       ],
       "settings": {
         "title": "<strong>Featured Collection</strong>",
