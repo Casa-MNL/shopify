@@ -295,9 +295,9 @@
           "type": "featured_collection",
           "name": "New Collections",
           "settings": {
-            "collection": "new-collection",
+            "collection": "frontpage",
             "products_to_show": 1,
-            "show_description": true,
+            "show_description": false,
             "show_view_all": true
           }
         },
