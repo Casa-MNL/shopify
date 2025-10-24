@@ -346,9 +346,9 @@
       "blocks": {
         "main_block_prMiEc": {
           "type": "main_block",
-          "name": "Featured Collection Grid",
+          "name": "White Space",
           "settings": {
-            "section_title": "Decorative Figures",
+            "section_title": "White Space",
             "collection": "",
             "product_limit": 8,
             "show_view_all": true,
