@@ -222,28 +222,16 @@ style="padding: {{ section.settings.section_padding }}px;"
 {% endif %}
 > 
  
-<div class="ai-featured-collection-{{ ai_gen_id }} bg-{{ section.settings.background_color }}" style="padding: {{ section.settings.section_padding }}px;">
-  {% if section.settings.enable_hover_zoom %}
-    <style>
-      .ai-featured-collection__card-{{ ai_gen_id }} img {
-        transition: transform 0.4s ease;
-      }
-      .ai-featured-collection__card-{{ ai_gen_id }}:hover img {
-        transform: scale(1.05);
-      }
-    </style>
-  {% endif %}
-
-  <div class="ai-featured-collection__container-{{ ai_gen_id }}">
-    {% if section.settings.section_title != blank %}
+<div class="ai-featured-collection__container-{{ ai_gen_id }}">
+    {% if block.settings.section_title != blank %}
       <div class="ai-featured-collection__header-{{ ai_gen_id }}">
-        <h2 class="ai-featured-collection__title-{{ ai_gen_id }}">{{ section.settings.section_title }}</h2>
+        <h2 class="ai-featured-collection__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
       </div>
     {% endif %}
 
-    {% if section.settings.collection != blank %}
-      {% assign collection = collections[section.settings.collection] %}
-      {% assign product_limit = section.settings.product_limit %}
+    {% if block.settings.collection != blank %}
+      {% assign collection = collections[block.settings.collection] %}
+      {% assign product_limit = block.settings.product_limit %}
 
       {% if collection.products.size > 0 %}
         <div class="ai-featured-collection__grid-{{ ai_gen_id }}">
@@ -295,7 +283,7 @@ style="padding: {{ section.settings.section_padding }}px;"
           {% endfor %}
         </div>
 
-        {% if section.settings.show_view_all %}
+        {% if block.settings.show_view_all %}
           <div class="ai-featured-collection__footer-{{ ai_gen_id }}">
             <a href="{{ collection.url }}" class="ai-featured-collection__button-{{ ai_gen_id }}">
               View all
@@ -304,12 +292,12 @@ style="padding: {{ section.settings.section_padding }}px;"
         {% endif %}
       {% else %}
         <div class="ai-featured-collection__empty-{{ ai_gen_id }}">
-          {{ section.settings.empty_state_text | default: "This collection is empty. Add products to display them here." }}
+          This collection is empty. Add products to display them here.
         </div>
       {% endif %}
     {% else %}
       <div class="ai-featured-collection__empty-{{ ai_gen_id }}">
-        {{ section.settings.empty_state_text | default: "Select a collection to display products." }}
+        Select a collection to display products.
       </div>
     {% endif %}
   </div>
