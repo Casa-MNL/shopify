@@ -306,7 +306,7 @@
           "name": "Others",
           "settings": {
             "collection": "category",
-            "products_to_show": 2,
+            "products_to_show": 1,
             "show_description": true,
             "show_view_all": true
           }
@@ -316,7 +316,7 @@
           "name": "Sale Items",
           "settings": {
             "collection": "gardening",
-            "products_to_show": 2,
+            "products_to_show": 1,
             "show_description": true,
             "show_view_all": true
           }
