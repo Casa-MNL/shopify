@@ -296,7 +296,7 @@
           "name": "New Collections",
           "settings": {
             "collection": "new-collection",
-            "products_to_show": 2,
+            "products_to_show": 1,
             "show_description": true,
             "show_view_all": true
           }
