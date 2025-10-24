@@ -303,11 +303,11 @@
         },
         "featured_collection_UV6rde": {
           "type": "featured_collection",
-          "name": "Others",
+          "name": "Decorative Figures",
           "settings": {
-            "collection": "category",
+            "collection": "decorative-figures",
             "products_to_show": 1,
-            "show_description": true,
+            "show_description": false,
             "show_view_all": true
           }
         },
@@ -357,24 +357,6 @@
             "title_font_size": "md",
             "enable_hover_zoom": true,
             "empty_state_text": "",
-            "grid_card_width": 100,
-            "grid_card_height": 150
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_2bfa6a2_Uci7Ft": {
-          "type": "ai_gen_block_2bfa6a2",
-          "name": "Decorative Figures - Layer 1",
-          "settings": {
-            "section_title": "Decorative Figures",
-            "collection": "decorative-figures",
-            "product_limit": 8,
-            "show_view_all": true,
-            "background_color": "white",
-            "section_padding": 120,
-            "title_font_size": "md",
-            "enable_hover_zoom": false,
-            "empty_state_text": "This collection is empty. Add products to display them here.",
             "grid_card_width": 100,
             "grid_card_height": 150
           },
@@ -451,15 +433,33 @@
             "grid_card_height": 150
           },
           "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_Uci7Ft": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Decorative Figures - Layer 5",
+          "settings": {
+            "section_title": "Others",
+            "collection": "category",
+            "product_limit": 8,
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 120,
+            "title_font_size": "md",
+            "enable_hover_zoom": false,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "main_block_prMiEc",
-        "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
         "ai_gen_block_2bfa6a2_4exThk",
         "ai_gen_block_2bfa6a2_4MfEm3",
-        "ai_gen_block_2bfa6a2_Mkr6c4"
+        "ai_gen_block_2bfa6a2_Mkr6c4",
+        "ai_gen_block_2bfa6a2_Uci7Ft"
       ],
       "settings": {}
     },
