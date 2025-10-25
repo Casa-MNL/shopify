@@ -10,6 +10,64 @@
 {%- endif -%}
 
 {%- style -%}
+
+/* Start-FULL CONTROL of WRAPPER */
+.flex-wrapper {
+  display: flex;
+  flex-direction: {{ section.settings.flex_direction }};
+  flex-wrap: {{ section.settings.flex_wrap }};
+  justify-content: {{ section.settings.justify_content }};
+  align-items: {{ section.settings.align_items }};
+  align-content: {{ section.settings.align_content }};
+  gap: {{ section.settings.gap }}px;
+  padding: {{ section.settings.wrapper_padding_top }}px {{ section.settings.wrapper_padding_right }}px {{ section.settings.wrapper_padding_bottom }}px {{ section.settings.wrapper_padding_left }}px;
+  margin: {{ section.settings.wrapper_margin_top }}px 0 {{ section.settings.wrapper_margin_bottom }}px 0;
+  transition: all {{ section.settings.transition_duration }}ms ease;
+}
+
+.item {
+  width: {{ section.settings.item_width }}px;
+  {% if section.settings.item_min_width > 0 %}
+    min-width: {{ section.settings.item_min_width }}px;
+  {% endif %}
+  {% if section.settings.item_max_width > 0 %}
+    max-width: {{ section.settings.item_max_width }}px;
+  {% endif %}
+  {% if section.settings.item_height > 0 %}
+    height: {{ section.settings.item_height }}px;
+  {% endif %}
+  flex-grow: {{ section.settings.item_grow }};
+  flex-shrink: {{ section.settings.item_shrink }};
+  align-self: {{ section.settings.item_align_self }};
+  padding: {{ section.settings.item_padding }}px;
+  margin: {{ section.settings.item_margin }}px;
+  border-radius: {{ section.settings.item_border_radius }}px;
+  transition: all {{ section.settings.transition_duration }}ms ease;
+}
+
+{% if section.settings.enable_hover_effects %}
+.item:hover {
+  transform: scale({{ section.settings.hover_scale | divided_by: 100.0 }});
+}
+{% endif %}
+
+{% if section.settings.enable_responsive %}
+@media screen and (max-width: 768px) {
+  .flex-wrapper {
+    flex-direction: {% if section.settings.mobile_flex_direction == 2 %}column{% else %}row{% endif %};
+    gap: {{ section.settings.mobile_gap }}px;
+  }
+  
+  .item {
+    width: {{ section.settings.mobile_item_width }}px;
+  }
+}
+{% endif %}
+
+/* END-FULL CONTROL of WRAPPER */
+
+
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -602,6 +660,182 @@
       "label": "Price Font Weight",
       "default": 500,
       "info": "Weight of price text"
+    },
+    {
+      "type": "header",
+      "content": "Flex Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "flex_direction",
+      "label": "Flex Direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Row"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Row Reverse"
+        },
+        {
+          "value": "column",
+          "label": "Column"
+        },
+        {
+          "value": "column-reverse",
+          "label": "Column Reverse"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "flex_wrap",
+      "label": "Flex Wrap",
+      "options": [
+        {
+          "value": "nowrap",
+          "label": "No Wrap"
+        },
+        {
+          "value": "wrap",
+          "label": "Wrap"
+        },
+        {
+          "value": "wrap-reverse",
+          "label": "Wrap Reverse"
+        }
+      ],
+      "default": "nowrap"
+    },
+    {
+      "type": "select",
+      "id": "justify_content",
+      "label": "Justify Content",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Flex Start"
+        },
+        {
+          "value": "flex-end",
+          "label": "Flex End"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "space-between",
+          "label": "Space Between"
+        },
+        {
+          "value": "space-around",
+          "label": "Space Around"
+        },
+        {
+          "value": "space-evenly",
+          "label": "Space Evenly"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "align_items",
+      "label": "Align Items",
+      "options": [
+        {
+          "value": "stretch",
+          "label": "Stretch"
+        },
+        {
+          "value": "flex-start",
+          "label": "Flex Start"
+        },
+        {
+          "value": "flex-end",
+          "label": "Flex End"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "baseline",
+          "label": "Baseline"
+        }
+      ],
+      "default": "stretch"
+    },
+    {
+      "type": "range",
+      "id": "flex_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Flex Gap",
+      "default": 0,
+      "info": "Space between flex items"
+    },
+    {
+      "type": "header",
+      "content": "Item Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_width",
+      "min": 100,
+      "max": 4000,
+      "step": 100,
+      "unit": "px",
+      "label": "Item Width",
+      "default": 2000,
+      "info": "Width of each flex item"
+    },
+    {
+      "type": "range",
+      "id": "item_min_width",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Item Minimum Width",
+      "default": 0,
+      "info": "Minimum width of each flex item"
+    },
+    {
+      "type": "range",
+      "id": "item_max_width",
+      "min": 0,
+      "max": 4000,
+      "step": 100,
+      "unit": "px",
+      "label": "Item Maximum Width",
+      "default": 4000,
+      "info": "Maximum width of each flex item (0 = no limit)"
+    },
+    {
+      "type": "range",
+      "id": "item_grow",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Flex Grow",
+      "default": 0,
+      "info": "Ability for item to grow relative to other items"
+    },
+    {
+      "type": "range",
+      "id": "item_shrink",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Flex Shrink",
+      "default": 1,
+      "info": "Ability for item to shrink relative to other items"
     },
     {
       "type": "header",
