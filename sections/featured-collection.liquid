@@ -11,7 +11,7 @@
 
 {%- style -%}
 
-/* Start-FULL CONTROL of WRAPPER */
+/* Start-FULL CONTROL of WRAPPER and HR */
 .flex-wrapper {
   display: flex;
   flex-direction: {{ section.settings.flex_direction }};
@@ -64,7 +64,71 @@
 }
 {% endif %}
 
-/* END-FULL CONTROL of WRAPPER */
+/* Small HR Element Styles */
+small hr.zeroMarginBottomTop {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.2;
+}
+
+/* Alternative thin line version */
+small hr.zeroMarginBottomTop.thin {
+  height: 0.5px;
+}
+
+/* Thick line version */
+small hr.zeroMarginBottomTop.thick {
+  height: 2px;
+}
+
+/* Dashed line version */
+small hr.zeroMarginBottomTop.dashed {
+  background: transparent;
+  border-top: 1px dashed currentColor;
+  height: 0;
+}
+
+/* Dotted line version */
+small hr.zeroMarginBottomTop.dotted {
+  background: transparent;
+  border-top: 1px dotted currentColor;
+  height: 0;
+}
+
+/* Colored variations */
+small hr.zeroMarginBottomTop.primary {
+  background-color: var(--color-primary);
+}
+
+small hr.zeroMarginBottomTop.accent {
+  background-color: var(--color-accent);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  small hr.zeroMarginBottomTop {
+    margin: 0 !important;
+  }
+}
+
+/* Accessibility - ensure sufficient contrast */
+@media (prefers-contrast: high) {
+  small hr.zeroMarginBottomTop {
+    opacity: 0.6;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  small hr.zeroMarginBottomTop {
+    transition: none;
+  }
+}
+
+/* END-FULL CONTROL of WRAPPER and HR*/
 
 
 
@@ -286,7 +350,7 @@
                   {{ collection.description | strip_html | truncatewords: 20 }}
                 </div>
               {%- endif -%}
-              <small><hr></small>
+              <small><hr class="zeroMarginBottomTop"></small>
             </div>
 
             <!-- Collection Products -->
