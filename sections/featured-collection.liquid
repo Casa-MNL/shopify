@@ -359,10 +359,10 @@ small hr.zeroMarginBottomTop.accent {
                   {{ collection.description | strip_html | truncatewords: 20 }}
                 </div>
               {%- endif -%} 
-               <div class="parent-element"></div>
             </div>
-           
-              
+
+            <div class="parent-element"></div>
+            
             <!-- Collection Products -->
             <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
               {%- for product in collection.products limit: block.settings.products_to_show -%}
