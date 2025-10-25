@@ -10,6 +10,18 @@
 {%- endif -%}
 
 {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
   .collections-grid-container {
     max-width: {{ section.settings.container_width }}%;
     margin: 0 auto;
@@ -29,12 +41,18 @@
     padding: {{ section.settings.card_padding }}rem;
     background: rgba(var(--color-background));
     box-shadow: 0 2px 8px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
   }
 
   .collection-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, {{ section.settings.shadow_opacity | plus: 4 | divided_by: 100.0 }});
-    transform: translateY(-{{ section.settings.hover_lift }}px);
+    {% if section.settings.hover_shadow_boost > 0 %}
+      box-shadow: 0 4px 16px rgba(0, 0, 0, {{ section.settings.shadow_opacity | plus: section.settings.hover_shadow_boost | divided_by: 100.0 }});
+    {% else %}
+      box-shadow: 0 4px 16px rgba(0, 0, 0, {{ section.settings.shadow_opacity | divided_by: 100.0 }});
+    {% endif %}
+    {% if section.settings.hover_lift > 0 %}
+      transform: translateY(-{{ section.settings.hover_lift }}px);
+    {% endif %}
   }
   
   .collection-card__title {
@@ -59,6 +77,52 @@
     margin: 0;
   }
 
+  /* Price display styles */
+  {% unless section.settings.show_price %}
+    .card-information__price {
+      display: none !important;
+    }
+  {% endunless %}
+
+  {% unless section.settings.show_compare_price %}
+    .price--on-sale .price-item--regular,
+    .price__sale del {
+      display: none !important;
+    }
+  {% endunless %}
+
+  {% if section.settings.price_font_size != 14 %}
+    .card-information__price .price {
+      font-size: {{ section.settings.price_font_size }}px;
+    }
+  {% endif %}
+
+  {% if section.settings.compare_price_font_size != 12 %}
+    .price--on-sale .price-item--regular,
+    .price__sale del {
+      font-size: {{ section.settings.compare_price_font_size }}px;
+    }
+  {% endif %}
+
+  {% if section.settings.price_color != '#4a4a4a' %}
+    .card-information__price .price:not(.price--on-sale) {
+      color: {{ section.settings.price_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.compare_price_color != '#a0a0a0' %}
+    .price--on-sale .price-item--regular,
+    .price__sale del {
+      color: {{ section.settings.compare_price_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.price_font_weight != 500 %}
+    .card-information__price .price {
+      font-weight: {{ section.settings.price_font_weight }};
+    }
+  {% endif %}
+
   /* Responsive design */
   @media screen and (max-width: 989px) {
     .collections-grid-container {
@@ -67,38 +131,38 @@
     
     .collections-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      gap: {{ section.settings.grid_gap | times: 0.75 | round: 2 }}rem;
       margin-bottom: 3rem;
     }
     
     .collection-card {
-      padding: 2rem;
+      padding: {{ section.settings.card_padding | times: 0.75 | round: 2 }}rem;
     }
   }
   
   @media screen and (max-width: 749px) {
     .collections-grid-container {
-      max-width: 60%;
+      max-width: 95%;
     }
     
     .collections-grid {
       grid-template-columns: 1fr;
-      gap: 6rem;
+      gap: {{ section.settings.grid_gap | times: 1.5 | round: 2 }}rem;
       margin-bottom: 2rem;
     }
     
     .collection-card {
-      padding: 3rem;
-      border-radius: 8px;
+      padding: {{ section.settings.card_padding | times: 0.6 | round: 2 }}rem;
+      border-radius: {{ section.settings.card_border_radius | times: 0.8 | round: 0 }}px;
     }
 
     .collection-card__title {
-      margin-bottom: 1.5rem;
+      margin-bottom: {{ section.settings.title_spacing | times: 0.75 | round: 2 }}rem;
       padding-bottom: 1rem;
     }
 
     .collection-card__products {
-      gap: 1rem;
+      gap: {{ section.settings.product_gap | times: 0.75 | round: 2 }}rem;
     }
   }
 
@@ -107,36 +171,53 @@
       max-width: min({{ section.settings.container_width }}%, 1400px);
     }
   }
-  
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  @media screen and (min-width: 990px) and (max-width: 1199px) {
+    .collections-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
+  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}" 
+       style="--container-width: {{ section.settings.container_width }}%;">
     
     {%- if section.settings.title != blank -%}
-      <div class="title-wrapper title-wrapper--no-top-margin page-width">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}" style="text-align: center;">
+      <div class="title-wrapper title-wrapper--no-top-margin" style="max-width: {{ section.settings.container_width }}%; margin: 0 auto;">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}" style="text-align: center; margin-bottom: {{ section.settings.title_spacing }}rem;">
           {{ section.settings.title }}
         </h2>
       </div>
     {%- endif -%}
 
-    <div class="collections-grid page-width">
+    <div class="collections-grid" style="
+      max-width: {{ section.settings.container_width }}%;
+      margin: 0 auto;
+      gap: {{ section.settings.grid_gap }}rem;
+      {% if section.settings.shadow_opacity > 0 %}
+        --card-shadow: 0 4px 12px rgba(0,0,0,{{ section.settings.shadow_opacity | divided_by: 100.0 }});
+      {% endif %}
+    ">
       {%- for block in section.blocks -%}
         {%- assign collection = block.settings.collection -%}
         {%- if collection != blank -%}
-          <div class="collection-card" {{ block.shopify_attributes }}>
+          <div class="collection-card" {{ block.shopify_attributes }} style="
+            padding: {{ section.settings.card_padding }}rem;
+            border-radius: {{ section.settings.card_border_radius }}px;
+            {% if section.settings.border_opacity > 0 %}
+              border: 1px solid rgba(0,0,0,{{ section.settings.border_opacity | divided_by: 100.0 }});
+            {% endif %}
+            box-shadow: var(--card-shadow, none);
+            transition: all 0.3s ease;
+            {% if section.settings.hover_lift > 0 or section.settings.hover_shadow_boost > 0 %}
+              --hover-lift: {{ section.settings.hover_lift }}px;
+              --hover-shadow-boost: {{ section.settings.hover_shadow_boost | divided_by: 100.0 }};
+            {% endif %}
+          " 
+          onmouseover="this.style.transform='translateY(calc(-1 * var(--hover-lift, 0px)))'; this.style.boxShadow='{% if section.settings.shadow_opacity > 0 %}0 calc(4px + var(--hover-lift, 0px)) calc(12px * (1 + var(--hover-shadow-boost, 0))) rgba(0,0,0,{{ section.settings.shadow_opacity | divided_by: 100.0 }} * (1 + var(--hover-shadow-boost, 0))){% else %}none{% endif %}';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--card-shadow, none)';">
+            
             <!-- Collection Title -->
             <div class="collection-card__title">
               <h3 class="h4">{{ collection.title }}</h3>
@@ -148,7 +229,7 @@
             </div>
 
             <!-- Collection Products -->
-            <div class="collection-card__products">
+            <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
               {%- for product in collection.products limit: block.settings.products_to_show -%}
                 {% render 'card-product',
                   card_product: product,
@@ -157,11 +238,22 @@
                   show_vendor: section.settings.show_vendor,
                   show_rating: section.settings.show_rating,
                   show_quick_add: section.settings.enable_quick_add,
+                  show_price: section.settings.show_price,
+                  show_compare_price: section.settings.show_compare_price,
+                  price_font_size: section.settings.price_font_size,
+                  compare_price_font_size: section.settings.compare_price_font_size,
+                  price_color: section.settings.price_color,
+                  compare_price_color: section.settings.compare_price_color,
+                  price_font_weight: section.settings.price_font_weight,
                   section_id: section.id
                 %}
               {%- else -%}
                 {%- for i in (1..block.settings.products_to_show) -%}
-                  {% render 'card-product', show_vendor: section.settings.show_vendor %}
+                  {% render 'card-product', 
+                    show_vendor: section.settings.show_vendor,
+                    show_price: section.settings.show_price,
+                    show_compare_price: section.settings.show_compare_price
+                  %}
                 {%- endfor -%}
               {%- endfor -%}
             </div>
@@ -180,13 +272,24 @@
           </div>
         {%- else -%}
           <!-- Placeholder if no collection selected -->
-          <div class="collection-card">
+          <div class="collection-card" style="
+            padding: {{ section.settings.card_padding }}rem;
+            border-radius: {{ section.settings.card_border_radius }}px;
+            {% if section.settings.border_opacity > 0 %}
+              border: 1px solid rgba(0,0,0,{{ section.settings.border_opacity | divided_by: 100.0 }});
+            {% endif %}
+            box-shadow: var(--card-shadow, none);
+          ">
             <div class="collection-card__title">
               <h3 class="h4">Collection {{ forloop.index }}</h3>
             </div>
-            <div class="collection-card__products">
+            <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
               {%- for i in (1..block.settings.products_to_show) -%}
-                {% render 'card-product', show_vendor: section.settings.show_vendor %}
+                {% render 'card-product', 
+                  show_vendor: section.settings.show_vendor,
+                  show_price: section.settings.show_price,
+                  show_compare_price: section.settings.show_compare_price
+                %}
               {%- endfor -%}
             </div>
           </div>
