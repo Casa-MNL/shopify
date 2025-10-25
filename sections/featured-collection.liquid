@@ -251,6 +251,14 @@
       </div>
     {%- endif -%}
 
+    {%- if section.settings.title != blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin" style="max-width: {{ section.settings.container_width }}%; margin: 0 auto;">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}" style="text-align: center; margin-bottom: {{ section.settings.title_spacing }}rem;">
+          __________________________
+        </h2>
+      </div>
+    {%- endif -%}
+
     <div class="collections-grid" style="
       max-width: {{ section.settings.container_width }}%;
       margin: 0 auto;
