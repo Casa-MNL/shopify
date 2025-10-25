@@ -351,7 +351,10 @@ small hr.zeroMarginBottomTop.accent {
                 </div>
               {%- endif -%} 
             </div>
+            <div class="collection-card__title">
               <small><hr class="zeroMarginBottomTop"></small>
+            </div>
+              
             <!-- Collection Products -->
             <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
               {%- for product in collection.products limit: block.settings.products_to_show -%}
