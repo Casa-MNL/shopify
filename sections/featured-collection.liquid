@@ -69,7 +69,7 @@
     margin-bottom: {{ section.settings.title_spacing }}rem;  
     padding-top: 0rem;
     padding-bottom: 1rem;
-    border-top: 1px solid rgba(var(--color-foreground), 0.3);
+    border-top: 1px solid rgba(var(--color-foreground), 0.2);
 }
 
 /* Small HR Element Styles */
@@ -189,8 +189,7 @@ small hr.zeroMarginBottomTop.accent {
     text-align: center;
     margin-bottom: {{ section.settings.title_spacing }}rem;
     padding-bottom: 1.5rem;
-
-    border-bottom: 0px solid rgba(var(--color-foreground), {{ section.settings.border_opacity | divided_by: 100.0 }});
+    border-bottom: 1px solid rgba(var(--color-foreground), {{ section.settings.border_opacity | divided_by: 100.0 }});
   }
 
   .collection-card__title h3 {
@@ -362,7 +361,7 @@ small hr.zeroMarginBottomTop.accent {
             </div>
 
             <div class="parent-element"></div>
-            
+
             <!-- Collection Products -->
             <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
               {%- for product in collection.products limit: block.settings.products_to_show -%}
