@@ -370,47 +370,6 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_AtDFEn": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_YTixbF": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "featured_collection_Yf7ytr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "all"
-          }
-        },
-        "featured_collection_ABBxAK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gardening"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_YTixbF",
-        "featured_collection_Yf7ytr",
-        "featured_collection_ABBxAK"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "17609479301973fede": {
       "type": "_blocks",
       "blocks": {
@@ -633,6 +592,89 @@
         "padding_bottom": 60
       }
     },
+    "collection_list_AtDFEn": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_YTixbF": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured_collection_ABBxAK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gardening"
+          }
+        },
+        "featured_collection_BdPALU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "decorative-figures"
+          }
+        },
+        "featured_collection_CkBMdm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "decorative-objects"
+          }
+        },
+        "featured_collection_HHkVkT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hand-crafted-wire-art-sculpture"
+          }
+        },
+        "featured_collection_XkpY7P": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "wire-art-tree"
+          }
+        },
+        "featured_collection_KFNzha": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hand-carved-skulls-by-master-artisans"
+          }
+        },
+        "featured_collection_MjqxUP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "toy-art-collectibles"
+          }
+        },
+        "featured_collection_Yf7ytr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "all"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_YTixbF",
+        "featured_collection_ABBxAK",
+        "featured_collection_BdPALU",
+        "featured_collection_CkBMdm",
+        "featured_collection_HHkVkT",
+        "featured_collection_XkpY7P",
+        "featured_collection_KFNzha",
+        "featured_collection_MjqxUP",
+        "featured_collection_Yf7ytr"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "All Collections",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multirow_ThX7rU": {
       "type": "multirow",
       "blocks": {
@@ -771,10 +813,10 @@
     "slideshow_CxbX3j",
     "slideshow_h4MEL7",
     "featured_collection",
-    "collection_list_AtDFEn",
     "17609479301973fede",
     "f1552b18-6017-4231-810d-74e61da22c37",
     "image_with_text_xHPCni",
+    "collection_list_AtDFEn",
     "multirow_ThX7rU",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
     "collage_BEd8Fb"
