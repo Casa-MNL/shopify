@@ -411,9 +411,27 @@
         },
         "ai_gen_block_2bfa6a2_4exThk": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Hand-crafted Wire Art Sculpture - Layer 3",
+          "name": "Premium Metal Wire Art Sculpture",
           "settings": {
-            "section_title": "Hand-crafted Wire Art Sculpture",
+            "section_title": "Premium Metal Wire Art Sculpture",
+            "collection": "hand-crafted-wire-art-sculpture",
+            "product_limit": 4,
+            "show_view_all": true,
+            "background_color": "white",
+            "section_padding": 60,
+            "title_font_size": "md",
+            "enable_hover_zoom": true,
+            "empty_state_text": "This collection is empty. Add products to display them here.",
+            "grid_card_width": 100,
+            "grid_card_height": 150
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2bfa6a2_MgtkGM": {
+          "type": "ai_gen_block_2bfa6a2",
+          "name": "Wire Art Tree",
+          "settings": {
+            "section_title": "Wire Art Tree",
             "collection": "hand-crafted-wire-art-sculpture",
             "product_limit": 4,
             "show_view_all": true,
@@ -468,6 +486,7 @@
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
         "ai_gen_block_2bfa6a2_4exThk",
+        "ai_gen_block_2bfa6a2_MgtkGM",
         "ai_gen_block_2bfa6a2_4MfEm3",
         "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
