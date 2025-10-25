@@ -309,7 +309,7 @@ style="padding: {{ section.settings.section_padding }}px;"
       {% endif %}
     {% else %}
       <div class="ai-featured-collection__empty-{{ ai_gen_id }}">
-        {{ section.settings.empty_state_text | default: "Select a collection to display products." }}
+        {{ section.settings.empty_state_text | default: " " }}
       </div>
     {% endif %}
   </div>
