@@ -65,7 +65,11 @@
 {% endif %}
 
 .parent-element {
-  padding-top: 1rem;
+    text-align: center;
+    margin-bottom: {{ section.settings.title_spacing }}rem;  
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 1);
 }
 
 /* Small HR Element Styles */
