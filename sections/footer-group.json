@@ -14,6 +14,14 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "text_8ExGHb": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "subtext": "<p>Looking for something unique? Message us or visit our display room — we’re here to help!<br/></p><p>#76-C Apo St. Sta. Mesa Heights, Quezon City</p><p>Waze and Google Maps Pin: 76-C Apo St. Sta. Mesa Heights, Q.C.</p><p>Monday - Saturday 10:00 am - 5:00 pm</p><p>+63915 9413706 / +639685912199</p><p>homeaspectsph@gmail.com<br/><br/>© 2025 Casa.MNL | Architected by <a href=\"https://soojidano.vercel.app\" target=\"_blank\" title=\"https://soojidano.vercel.app\">Soo Ji Dano</a></p>"
+          }
+        },
         "55172ef6-3a6a-4cfa-b790-88739b47891f": {
           "type": "link_list",
           "settings": {
@@ -38,6 +46,7 @@
         }
       },
       "block_order": [
+        "text_8ExGHb",
         "55172ef6-3a6a-4cfa-b790-88739b47891f",
         "6e0c08d4-cd4c-439c-b5e2-a483bba29ec2",
         "f95fe295-fbc2-4d2b-a952-72670c2ab328"
