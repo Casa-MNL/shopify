@@ -432,7 +432,7 @@
           "name": "Wire Art Tree",
           "settings": {
             "section_title": "Wire Art Tree",
-            "collection": "hand-crafted-wire-art-sculpture",
+            "collection": "wire-art-tree",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
