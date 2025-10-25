@@ -11,7 +11,7 @@
 
 {%- style -%}
 
-/* Start-FULL CONTROL of WRAPPER and HR */
+/* Start-FULL CONTROL of WRAPPER and HR for parent element */
 .flex-wrapper {
   display: flex;
   flex-direction: {{ section.settings.flex_direction }};
@@ -72,71 +72,7 @@
     border-top: 1px solid rgba(var(--color-foreground), 0.3);
 }
 
-/* Small HR Element Styles */
-small hr.zeroMarginBottomTop {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none;
-  height: 1px;
-  background-color: currentColor;
-  opacity: 0.2;
-}
-
-/* Alternative thin line version */
-small hr.zeroMarginBottomTop.thin {
-  height: 0.5px;
-}
-
-/* Thick line version */
-small hr.zeroMarginBottomTop.thick {
-  height: 2px;
-}
-
-/* Dashed line version */
-small hr.zeroMarginBottomTop.dashed {
-  background: transparent;
-  border-top: 1px dashed currentColor;
-  height: 0;
-}
-
-/* Dotted line version */
-small hr.zeroMarginBottomTop.dotted {
-  background: transparent;
-  border-top: 1px dotted currentColor;
-  height: 0;
-}
-
-/* Colored variations */
-small hr.zeroMarginBottomTop.primary {
-  background-color: var(--color-primary);
-}
-
-small hr.zeroMarginBottomTop.accent {
-  background-color: var(--color-accent);
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 749px) {
-  small hr.zeroMarginBottomTop {
-    margin: 0 !important;
-  }
-}
-
-/* Accessibility - ensure sufficient contrast */
-@media (prefers-contrast: high) {
-  small hr.zeroMarginBottomTop {
-    opacity: 0.6;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  small hr.zeroMarginBottomTop {
-    transition: none;
-  }
-}
-
-/* END-FULL CONTROL of WRAPPER and HR*/
+/* END-FULL CONTROL of WRAPPER and HR for parent element */
 
 
 
@@ -360,9 +296,7 @@ small hr.zeroMarginBottomTop.accent {
               {%- endif -%} 
             </div>
 
-            <div class="parent-element">
-              <!-- <small><hr class="zeroMarginBottomTop"></small>-->
-            </div>
+            <div class="parent-element"> </div>
 
             <!-- Collection Products -->
             <div class="collection-card__products" style="gap: {{ section.settings.product_gap }}rem;">
