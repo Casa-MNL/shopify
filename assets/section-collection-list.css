@@ -9,13 +9,21 @@
 
 @media screen and (max-width: 749px) {
   .collection-list:not(.slider) {
+    /*
     padding-left: 0;
     padding-right: 0;
+    */
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .section-collection-list .page-width {
+    /*
     padding-left: 0;
     padding-right: 0;
+    */
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .section-collection-list .collection-list:not(.slider) {
