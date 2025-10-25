@@ -643,6 +643,12 @@
             "collection": "toy-art-collectibles"
           }
         },
+        "featured_collection_3Hmb8V": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "category"
+          }
+        },
         "featured_collection_Yf7ytr": {
           "type": "featured_collection",
           "settings": {
@@ -659,6 +665,7 @@
         "featured_collection_XkpY7P",
         "featured_collection_KFNzha",
         "featured_collection_MjqxUP",
+        "featured_collection_3Hmb8V",
         "featured_collection_Yf7ytr"
       ],
       "name": "t:sections.collection-list.presets.name",
