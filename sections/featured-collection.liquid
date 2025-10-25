@@ -77,49 +77,51 @@
     margin: 0;
   }
 
-  /* Price display styles */
+  /* Price display styles - FIXED */
   {% unless section.settings.show_price %}
-    .card-information__price {
+    .collection-card .price,
+    .collection-card .card-information__price,
+    .collection-card .product-price {
       display: none !important;
     }
   {% endunless %}
 
   {% unless section.settings.show_compare_price %}
-    .price--on-sale .price-item--regular,
-    .price__sale del {
+    .collection-card .price--on-sale .price-item--regular,
+    .collection-card .price__sale del,
+    .collection-card .compare-at-price,
+    .collection-card .product-compare-price {
       display: none !important;
     }
   {% endunless %}
 
-  {% if section.settings.price_font_size != 14 %}
-    .card-information__price .price {
-      font-size: {{ section.settings.price_font_size }}px;
+  {% if section.settings.show_price %}
+    .collection-card .price,
+    .collection-card .card-information__price .price,
+    .collection-card .product-price {
+      {% if section.settings.price_font_size != 14 %}
+        font-size: {{ section.settings.price_font_size }}px;
+      {% endif %}
+      {% if section.settings.price_color != '#4a4a4a' %}
+        color: {{ section.settings.price_color }};
+      {% endif %}
+      {% if section.settings.price_font_weight != 500 %}
+        font-weight: {{ section.settings.price_font_weight }};
+      {% endif %}
     }
   {% endif %}
 
-  {% if section.settings.compare_price_font_size != 12 %}
-    .price--on-sale .price-item--regular,
-    .price__sale del {
-      font-size: {{ section.settings.compare_price_font_size }}px;
-    }
-  {% endif %}
-
-  {% if section.settings.price_color != '#4a4a4a' %}
-    .card-information__price .price:not(.price--on-sale) {
-      color: {{ section.settings.price_color }};
-    }
-  {% endif %}
-
-  {% if section.settings.compare_price_color != '#a0a0a0' %}
-    .price--on-sale .price-item--regular,
-    .price__sale del {
-      color: {{ section.settings.compare_price_color }};
-    }
-  {% endif %}
-
-  {% if section.settings.price_font_weight != 500 %}
-    .card-information__price .price {
-      font-weight: {{ section.settings.price_font_weight }};
+  {% if section.settings.show_compare_price %}
+    .collection-card .price--on-sale .price-item--regular,
+    .collection-card .price__sale del,
+    .collection-card .compare-at-price,
+    .collection-card .product-compare-price {
+      {% if section.settings.compare_price_font_size != 12 %}
+        font-size: {{ section.settings.compare_price_font_size }}px;
+      {% endif %}
+      {% if section.settings.compare_price_color != '#a0a0a0' %}
+        color: {{ section.settings.compare_price_color }};
+      {% endif %}
     }
   {% endif %}
 
