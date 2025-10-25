@@ -280,13 +280,12 @@
             
             <!-- Collection Title -->
             <div class="collection-card__title">
-              <h3 class="h4">{{ collection.title }}</h3>
+              <h3 class="h4">{{ collection.title }}</h3><hr>
               {%- if block.settings.show_description and collection.description != empty -%}
                 <div class="collection__description rte">
                   {{ collection.description | strip_html | truncatewords: 20 }}
                 </div>
               {%- endif -%}
-              <hr>
             </div>
 
             <!-- Collection Products -->
