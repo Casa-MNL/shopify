@@ -436,6 +436,70 @@
     },
     {
       "type": "header",
+      "content": "Price Display Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "default": true,
+      "label": "Show Price",
+      "info": "Display product prices"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_compare_price",
+      "default": true,
+      "label": "Show Compare Price",
+      "info": "Display original price when on sale"
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Price Font Size",
+      "default": 14,
+      "info": "Size of price text"
+    },
+    {
+      "type": "range",
+      "id": "compare_price_font_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Compare Price Font Size",
+      "default": 12,
+      "info": "Size of compare price text"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "default": "#4a4a4a",
+      "label": "Price Color",
+      "info": "Color of regular price"
+    },
+    {
+      "type": "color",
+      "id": "compare_price_color",
+      "default": "#a0a0a0",
+      "label": "Compare Price Color",
+      "info": "Color of compare price"
+    },
+    {
+      "type": "range",
+      "id": "price_font_weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "label": "Price Font Weight",
+      "default": 500,
+      "info": "Weight of price text"
+    },
+    {
+      "type": "header",
       "content": "Section Spacing"
     },
     {
@@ -489,6 +553,13 @@
           "id": "show_view_all",
           "default": true,
           "label": "Show View All Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_show_prices",
+          "default": true,
+          "label": "Show Prices in This Collection",
+          "info": "Override global price setting for this collection"
         }
       ]
     }
