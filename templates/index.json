@@ -298,7 +298,8 @@
             "collection": "frontpage",
             "products_to_show": 1,
             "show_description": false,
-            "show_view_all": true
+            "show_view_all": true,
+            "block_show_prices": true
           }
         },
         "featured_collection_UV6rde": {
@@ -308,7 +309,8 @@
             "collection": "all",
             "products_to_show": 1,
             "show_description": false,
-            "show_view_all": true
+            "show_view_all": true,
+            "block_show_prices": true
           }
         },
         "featured_collection_pbKPkH": {
@@ -318,7 +320,8 @@
             "collection": "gardening",
             "products_to_show": 1,
             "show_description": true,
-            "show_view_all": true
+            "show_view_all": true,
+            "block_show_prices": true
           }
         }
       },
@@ -330,13 +333,39 @@
       "settings": {
         "title": "<strong> Featured Collections</strong>",
         "heading_size": "h1",
-        "full_width": true,
+        "container_width": 70,
+        "grid_gap": 3,
+        "card_padding": 3,
+        "card_border_radius": 0,
+        "border_opacity": 12,
         "color_scheme": "background-1",
+        "shadow_opacity": 4,
+        "title_spacing": 4,
+        "product_gap": 2,
+        "hover_lift": 2,
+        "hover_shadow_boost": 100,
         "image_ratio": "square",
         "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": true,
-        "enable_quick_add": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "show_price": true,
+        "show_compare_price": true,
+        "price_font_size": 14,
+        "compare_price_font_size": 12,
+        "price_color": "#4a4a4a",
+        "compare_price_color": "#a0a0a0",
+        "price_font_weight": 500,
+        "flex_direction": "row",
+        "flex_wrap": "nowrap",
+        "justify_content": "flex-start",
+        "align_items": "stretch",
+        "flex_gap": 0,
+        "item_width": 2000,
+        "item_min_width": 0,
+        "item_max_width": 4000,
+        "item_grow": 0,
+        "item_shrink": 1,
         "padding_top": 72,
         "padding_bottom": 36
       }
@@ -344,24 +373,6 @@
     "17609479301973fede": {
       "type": "_blocks",
       "blocks": {
-        "main_block_prMiEc": {
-          "type": "main_block",
-          "name": "White Space",
-          "settings": {
-            "section_title": "White Space",
-            "collection": "",
-            "product_limit": 8,
-            "show_view_all": true,
-            "background_color": "white",
-            "section_padding": 60,
-            "title_font_size": "md",
-            "enable_hover_zoom": false,
-            "empty_state_text": "",
-            "grid_card_width": 100,
-            "grid_card_height": 150
-          },
-          "blocks": {}
-        },
         "ai_gen_block_2bfa6a2_Uci7Ft": {
           "type": "ai_gen_block_2bfa6a2",
           "name": "Decorative Figures - Layer 1",
@@ -454,7 +465,6 @@
         }
       },
       "block_order": [
-        "main_block_prMiEc",
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
         "ai_gen_block_2bfa6a2_4exThk",
