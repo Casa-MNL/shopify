@@ -1,17 +1,15 @@
 {% style %}
-  /* 🔴 LAYOUT & DESIGN — controls overall spacing and visual structure */
   .store-location-map {
     padding: 80px 20px;
     background-color: #fafafa;
   }
 
-  /* 🔴 GRID — two-column responsive layout */
   .store-location-map__container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: center; /* ✅ vertically align items */
     gap: 50px;
   }
 
@@ -21,12 +19,11 @@
     }
   }
 
-  /* 🔴 LEFT PANEL (text info) */
   .store-location-map__info {
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* ✅ vertically align text */
     text-align: left;
   }
 
@@ -44,7 +41,6 @@
     margin-bottom: 30px;
   }
 
-  /* 🔴 HOURS SECTION */
   .store-location-map__hours {
     margin-top: 20px;
   }
@@ -71,7 +67,6 @@
     border-bottom: 1px solid #e5e5e5;
   }
 
-  /* 🔴 MAP SECTION */
   .store-location-map__map {
     text-align: center;
   }
@@ -98,42 +93,42 @@
 <div class="store-location-map">
   <div class="store-location-map__container">
     
-    <!-- 🔴 LEFT COLUMN — STORE INFORMATION -->
+    <!-- LEFT COLUMN: INFO -->
     <div class="store-location-map__info">
       <h2 class="store-location-map__title">
-        {{ section.settings.store_title | default: "Visit Our Store" }}
+        {{ section.settings.location_title | default: "Visit Our Display Room" }}
       </h2>
       
       <div class="store-location-map__address">
-        {{ section.settings.store_address | default: "76-C Apo Street, Sta. Mesa Heights, Quezon City" }}
+        {{ section.settings.location_address | default: "76-C Apo Street, Sta. Mesa Heights, Quezon City" }}
       </div>
       
       <div class="store-location-map__hours">
-        <h3 class="store-location-map__hours-title">
-          {{ section.settings.hours_title | default: "Business Hours" }}
-        </h3>
+        <h3 class="store-location-map__hours-title">Business Hours</h3>
         <ul class="store-location-map__hours-list">
-          {% for block in section.blocks %}
-            <li class="store-location-map__hours-item">
-              <span>{{ block.settings.day }}</span>
-              <span>{{ block.settings.time }}</span>
-            </li>
-          {% endfor %}
+          <li class="store-location-map__hours-item">
+            <span>Monday - Saturday</span>
+            <span>10:00 AM - 5:00 PM</span>
+          </li>
+          <li class="store-location-map__hours-item">
+            <span>Sunday</span>
+            <span style="color: #e67e22;">*By schedule only</span>
+          </li>
         </ul>
       </div>
     </div>
 
-    <!-- 🔴 RIGHT COLUMN — EMBEDDED MAP -->
+    <!-- RIGHT COLUMN: MAP -->
     <div class="store-location-map__map">
       <iframe 
         class="store-location-map__frame"
-        src="{{ section.settings.map_embed_url | default: 'https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik' }}"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik"
         loading="lazy">
       </iframe>
 
       <div style="text-align: center; margin-top: 10px;">
         <small>
-          <a href="{{ section.settings.map_link | default: 'https://www.openstreetmap.org/node/3237667642' }}" target="_blank">
+          <a href="https://www.openstreetmap.org/node/3237667642" target="_blank">
             View Larger Map
           </a>
         </small>
@@ -142,7 +137,7 @@
   </div>
 </div>
 
-<!-- 🔴 JSON-LD SCHEMA for SEO -->
+<!-- ✅ SEO JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -174,38 +169,92 @@
 {
   "name": "Store Location Map",
   "settings": [
-    /* 🔴 BASIC DETAILS */
-    { "type": "text", "id": "store_title", "label": "Store Name", "default": "Casa.MNL Display Room" },
-    { "type": "text", "id": "store_address", "label": "Store Address", "default": "76-C Apo Street, Sta. Mesa Heights, Quezon City" },
-
-    /* 🔴 MAP SETTINGS */
-    { "type": "text", "id": "map_embed_url", "label": "Map Embed URL", "default": "https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik" },
-    { "type": "text", "id": "map_link", "label": "View Larger Map Link", "default": "https://www.openstreetmap.org/node/3237667642" },
-
-    /* 🔴 META DATA FOR SEO */
-    { "type": "text", "id": "hours_title", "label": "Business Hours Title", "default": "Operating Hours" },
-    { "type": "text", "id": "city", "label": "City", "default": "Quezon City" },
-    { "type": "text", "id": "region", "label": "Region/Province", "default": "Metro Manila" },
-    { "type": "text", "id": "country", "label": "Country", "default": "Philippines" },
-    { "type": "text", "id": "latitude", "label": "Latitude", "default": "14.6476" },
-    { "type": "text", "id": "longitude", "label": "Longitude", "default": "121.0490" }
+    {
+      "type": "text",
+      "id": "store_title",
+      "label": "Store Name",
+      "default": "Casa.MNL Display Room"
+    },
+    {
+      "type": "text",
+      "id": "store_address",
+      "label": "Store Address",
+      "default": "76-C Apo Street, Sta. Mesa Heights, Quezon City"
+    },
+    {
+      "type": "text",
+      "id": "map_embed_url",
+      "label": "Google Maps or OpenStreetMap Embed URL",
+      "default": "https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik"
+    },
+    {
+      "type": "text",
+      "id": "map_link",
+      "label": "View Larger Map Link",
+      "default": "https://www.openstreetmap.org/node/3237667642"
+    },
+    {
+      "type": "text",
+      "id": "hours_title",
+      "label": "Business Hours Title",
+      "default": "Operating Hours"
+    },
+    {
+      "type": "text",
+      "id": "city",
+      "label": "City",
+      "default": "Quezon City"
+    },
+    {
+      "type": "text",
+      "id": "region",
+      "label": "Region/Province",
+      "default": "Metro Manila"
+    },
+    {
+      "type": "text",
+      "id": "country",
+      "label": "Country",
+      "default": "Philippines"
+    },
+    {
+      "type": "text",
+      "id": "latitude",
+      "label": "Latitude",
+      "default": "14.6476"
+    },
+    {
+      "type": "text",
+      "id": "longitude",
+      "label": "Longitude",
+      "default": "121.0490"
+    }
   ],
-
-  /* 🔴 BLOCKS FOR DYNAMIC HOURS */
   "blocks": [
     {
       "type": "hours",
       "name": "Operating Hours",
       "settings": [
-        { "type": "text", "id": "day", "label": "Day", "default": "Monday - Saturday" },
-        { "type": "text", "id": "time", "label": "Hours", "default": "10:00 AM - 5:00 PM" }
+        {
+          "type": "text",
+          "id": "day",
+          "label": "Day",
+          "default": "Monday - Saturday"
+        },
+        {
+          "type": "text",
+          "id": "time",
+          "label": "Hours",
+          "default": "10:00 AM - 5:00 PM"
+        }
       ]
     }
   ],
-
-  /* 🔴 THEME EDITOR PRESET */
   "presets": [
-    { "name": "Store Location Map", "category": "Contact & Info" }
+    {
+      "name": "Store Location Map",
+      "category": "Contact & Info"
+    }
   ]
 }
 {% endschema %}
