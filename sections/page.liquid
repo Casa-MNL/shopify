@@ -23,11 +23,8 @@
         {{ 'sections.page.title' | t }}
       {%- endif -%}
     </h2>
-      <div class="rte-holder">
-         
-
+      <div class="rte-holder">  
         <div class="rte">
-          {%- comment -%}
             {%- if section.settings.page.content != blank -%}
               {{ section.settings.page.content }}
             {%- else -%}
@@ -35,6 +32,7 @@
                 {{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
               </div>
             {%- endif -%}
+          {%- comment -%}
           {%- endcomment -%}
         </div>
       </div>
