@@ -61,74 +61,19 @@
     },
     "custom_liquid_QpwQbY": {
       "type": "custom-liquid",
-      "blocks": {
-        "slide_CRzzmJ": {
-          "type": "slide",
-          "name": "Slide 1",
-          "settings": {
-            "image": "shopify://shop_images/Hero_Banner_1.png",
-            "heading": "",
-            "subtext": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "slide_8zaJdM": {
-          "type": "slide",
-          "name": "Slide 2",
-          "settings": {
-            "heading": "",
-            "subtext": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "slide_MH9jDA": {
-          "type": "slide",
-          "name": "Slide 3",
-          "settings": {
-            "heading": "",
-            "subtext": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "slide_TNttMr": {
-          "type": "slide",
-          "name": "Slide 4",
-          "settings": {
-            "heading": "",
-            "subtext": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "slide_BwfU4w": {
-          "type": "slide",
-          "name": "Slide 5",
-          "settings": {
-            "heading": "",
-            "subtext": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_CRzzmJ",
-        "slide_8zaJdM",
-        "slide_MH9jDA",
-        "slide_TNttMr",
-        "slide_BwfU4w"
-      ],
       "disabled": true,
       "name": "Hero Banner Slider",
       "settings": {
-        "accessible_label": "Homepage hero banner slider",
-        "autoplay_interval": 5000,
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "store_title": "Casa.MNL Display Room",
+        "store_address": "76-C Apo Street, Sta. Mesa Heights, Quezon City",
+        "map_embed_url": "https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&layer=mapnik",
+        "map_link": "https://www.openstreetmap.org/node/3237667642",
+        "hours_title": "Operating Hours",
+        "city": "Quezon City",
+        "region": "Metro Manila",
+        "country": "Philippines",
+        "latitude": "14.6476",
+        "longitude": "121.0490"
       }
     }
   },
