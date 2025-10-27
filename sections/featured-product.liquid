@@ -30,121 +30,115 @@
 
   /* Quantity Selector Alignment Styles */
   .quantity-align-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
   }
 
   .quantity-align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .quantity-align-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     text-align: right;
   }
 
-  /* Center Alignment Specific Styles */
+  /* Label Alignment */
+  .quantity-align-left .quantity__label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
   .quantity-align-center .quantity__label {
-    display: block;
     text-align: center;
-    margin-bottom: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .quantity-align-right .quantity__label {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  /* Quantity Input Container */
+  .quantity-align-left quantity-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .quantity-align-center quantity-input {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    margin: 0 auto;
+    align-items: center;
   }
 
-  .quantity-align-center .quantity__input {
-    text-align: center;
+  .quantity-align-right quantity-input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* Quantity Rules Alignment */
+  .quantity-align-left .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 8px;
+    width: 100%;
   }
 
   .quantity-align-center .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    justify-content: center;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .quantity-align-right .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  /* Cart Quantity Rules */
+  .quantity-align-left .quantity__rules-cart {
+    text-align: left;
+    width: 100%;
   }
 
   .quantity-align-center .quantity__rules-cart {
-    display: block;
     text-align: center;
-    margin-top: 4px;
-  }
-
-  /* Right Alignment Specific Styles */
-  .quantity-align-right .quantity__label {
-    display: block;
-    text-align: right;
-    margin-bottom: 8px;
-  }
-
-  .quantity-align-right quantity-input {
-    display: inline-flex;
-    justify-content: flex-end;
-    margin-left: auto;
-  }
-
-  .quantity-align-right .quantity__input {
-    text-align: center;
-  }
-
-  .quantity-align-right .quantity__rules {
-    text-align: right;
-    justify-content: flex-end;
+    width: 100%;
   }
 
   .quantity-align-right .quantity__rules-cart {
-    display: block;
     text-align: right;
-    margin-top: 4px;
+    width: 100%;
   }
 
-  /* Left Alignment Specific Styles (default) */
-  .quantity-align-left .quantity__label {
-    display: block;
-    text-align: left;
-    margin-bottom: 8px;
-  }
-
-  .quantity-align-left quantity-input {
-    display: inline-flex;
-    justify-content: flex-start;
-  }
-
-  .quantity-align-left .quantity__input {
+  /* Common Quantity Input Styles */
+  .quantity-align-left .quantity__input,
+  .quantity-align-center .quantity__input,
+  .quantity-align-right .quantity__input {
     text-align: center;
-  }
-
-  .quantity-align-left .quantity__rules {
-    text-align: left;
-    justify-content: flex-start;
-  }
-
-  .quantity-align-left .quantity__rules-cart {
-    display: block;
-    text-align: left;
-    margin-top: 4px;
-  }
-
-  /* Common Styles for All Alignments */
-  .quantity-align-left quantity-input,
-  .quantity-align-center quantity-input,
-  .quantity-align-right quantity-input {
-    align-items: center;
-    gap: 8px;
-  }
-
-  .quantity-align-left .quantity__rules,
-  .quantity-align-center .quantity__rules,
-  .quantity-align-right .quantity__rules {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-  }
-
-  .quantity-align-left .quantity__rules .divider,
-  .quantity-align-center .quantity__rules .divider,
-  .quantity-align-right .quantity__rules .divider {
-    display: inline-block;
+    width: 60px;
+    height: 40px;
   }
 
   .quantity-align-left .quantity__button,
@@ -158,18 +152,20 @@
     padding: 0;
   }
 
-  .quantity-align-left .quantity__input,
-  .quantity-align-center .quantity__input,
-  .quantity-align-right .quantity__input {
-    width: 60px;
-    height: 40px;
+  /* Loading States */
+  .quantity-align-left .quantity__rules-cart .loading-overlay,
+  .quantity-align-center .quantity__rules-cart .loading-overlay,
+  .quantity-align-right .quantity__rules-cart .loading-overlay {
+    display: inline-flex;
+    vertical-align: middle;
   }
 
-  /* Mobile Responsive Adjustments */
+  /* Mobile Responsive */
   @media screen and (max-width: 749px) {
     .quantity-align-left,
     .quantity-align-center,
     .quantity-align-right {
+      align-items: center;
       text-align: center;
     }
     
@@ -183,13 +179,12 @@
     .quantity-align-center quantity-input,
     .quantity-align-right quantity-input {
       justify-content: center;
-      margin: 0 auto;
     }
     
     .quantity-align-left .quantity__rules,
     .quantity-align-center .quantity__rules,
     .quantity-align-right .quantity__rules {
-      justify-content: center;
+      align-items: center;
       text-align: center;
     }
     
@@ -198,30 +193,6 @@
     .quantity-align-right .quantity__rules-cart {
       text-align: center;
     }
-  }
-
-  /* Loading State Alignment */
-  .quantity-align-left .loading-overlay,
-  .quantity-align-center .loading-overlay,
-  .quantity-align-right .loading-overlay {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .quantity-align-center .loading-overlay {
-    justify-content: center;
-  }
-
-  .quantity-align-right .loading-overlay {
-    justify-content: flex-end;
-  }
-
-  /* Ensure proper spacing */
-  .quantity-align-left .quantity__rules-cart .loading-overlay,
-  .quantity-align-center .quantity__rules-cart .loading-overlay,
-  .quantity-align-right .quantity__rules-cart .loading-overlay {
-    display: inline-flex;
-    vertical-align: middle;
   }
 
 {%- endstyle -%}
