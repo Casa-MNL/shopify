@@ -92,6 +92,7 @@
         "featured_collection_dHxfY7",
         "featured_collection_gFXXyw"
       ],
+      "disabled": true,
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "All Collections",
