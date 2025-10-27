@@ -29,7 +29,18 @@
     "custom_liquid_tEMNxr": {
       "type": "custom-liquid",
       "name": "Location Map",
-      "settings": {}
+      "settings": {
+        "store_title": "Casa.MNL Display Room",
+        "store_address": "{{ page.metafields.store.casamnl_address.value }}",
+        "map_embed_url": "https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&layer=mapnik",
+        "map_link": "https://www.openstreetmap.org/node/3237667642",
+        "hours_title": "Operating Hours",
+        "city": "Quezon City",
+        "region": "Metro Manila",
+        "country": "Philippines",
+        "latitude": "14.6476",
+        "longitude": "121.0490"
+      }
     }
   },
   "order": [
