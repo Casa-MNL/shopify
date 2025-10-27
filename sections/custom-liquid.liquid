@@ -100,7 +100,36 @@
       </h2>
       
       <div class="store-location-map__address">
-        🌐{{ section.settings.location_address | default: "76-C Apo Street, Sta. Mesa Heights, Quezon City" }}
+        {{ section.settings.location_address | default: "76-C Apo Street, Sta. Mesa Heights, Quezon City" }}
+        
+        <!-- Contact Information Section -->
+        <div class="store-location-map__contact-info">
+          <h3 class="store-location-map__contact-title">Contact Information</h3>
+          <ul class="store-location-map__contact-list">
+            <li class="store-location-map__contact-item">
+              <div class="store-location-map__contact-icon">📞</div>
+              <div class="store-location-map__contact-details">
+                <div class="store-location-map__contact-label">Phone</div>
+                <div class="store-location-map__contact-value">{{ section.settings.phone | default: "+63 XXX XXX XXXX" }}</div>
+              </div>
+            </li>
+            <li class="store-location-map__contact-item">
+              <div class="store-location-map__contact-icon">✉️</div>
+              <div class="store-location-map__contact-details">
+                <div class="store-location-map__contact-label">Email</div>
+                <div class="store-location-map__contact-value">{{ section.settings.email | default: "hello@tiyper.com" }}</div>
+              </div>
+            </li>
+            <li class="store-location-map__contact-item">
+              <div class="store-location-map__contact-icon">🌐</div>
+              <div class="store-location-map__contact-details">
+                <div class="store-location-map__contact-label">Website</div>
+                <div class="store-location-map__contact-value">{{ section.settings.website | default: "www.tiyper.com" }}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      
       </div>
       
       <div class="store-location-map__hours">
