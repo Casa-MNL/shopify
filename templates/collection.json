@@ -63,7 +63,9 @@
         },
         "quantity_selector_XHJcnC": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+            "alignment": "center"
+          }
         },
         "buy_buttons_3eRC8X": {
           "type": "buy_buttons",
