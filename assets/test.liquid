@@ -1,0 +1,175 @@
+<div class="collections-page color-background-1">
+  <div class="rte-holder">
+    <ul class="collections-list">
+      <li><a href="/collections/decorative-figures" class="collection-item" data-image="decorative-figures"><span class="collection-text">Decorative Figures</span></a></li>
+      <li><a href="/collections/decorative-objects" class="collection-item" data-image="decorative-objects"><span class="collection-text">Decorative Objects</span></a></li>
+      <li><a href="/collections/hand-carved-skulls" class="collection-item" data-image="hand-carved-skulls"><span class="collection-text">Hand Carved Skulls by Master Artisans</span></a></li>
+      <li><a href="/collections/premium-wire-art-sculpture" class="collection-item" data-image="premium-was"><span class="collection-text">Premium Hand-crafted Wire Art Sculpture</span></a></li>
+      <li><a href="/collections/wire-art-sculpture" class="collection-item" data-image="wire-art-sculpture"><span class="collection-text">Wire Art Sculpture</span></a></li>
+      <li><a href="/collections/toy-art-collectibles" class="collection-item" data-image="toy-art-collectibles"><span class="collection-text">Toy Art &amp; Collectibles</span></a></li>
+      <li><a href="/collections/new-arrivals" class="collection-item" data-image="new-arrivals"><span class="collection-text">New Arrivals</span></a></li>
+      <li><a href="/collections/sales" class="collection-item" data-image="sales"><span class="collection-text">Sales</span></a></li>
+    </ul>
+  </div>
+</div>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: 1.5;
+    color: rgba(var(--color-foreground), 0.75);
+    background-color: rgb(var(--color-background));
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .collections-page {
+    max-width: 2400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .rte-holder {
+    max-width: 90%;
+    margin: 0 auto 3rem;
+  }
+
+  .collections-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .collection-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+    font-weight: 500;
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    border-radius: var(--buttons-radius);
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 2px 5px rgba(var(--color-base-text), 0.04);
+    transition: all 0.25s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collection-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+    background-color: rgb(var(--color-foreground));
+  }
+
+  .collection-item[data-image*="decorative-figures"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/IMG_0527.jpg?v=1760691906'); }
+  .collection-item[data-image*="decorative-objects"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/att.jS3Sqg4Ge89qs0_Iz87GyACdGvHvCD4I-B230E-89k.jpg?v=1761384506'); }
+  .collection-item[data-image*="hand-carved-skulls"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/Photoroom_20250919_174440.jpg?v=1761212621'); }
+  .collection-item[data-image*="premium-was"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/AluminumHand-craftedWire-ArtSculpture.jpg?v=1761290556'); }
+  .collection-item[data-image*="wire-art-sculpture"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/Photoroom_20251006_230331.jpg?v=1761385923'); }
+  .collection-item[data-image*="toy-art-collectibles"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/Photoroom_20250912_092922.jpg?v=1761289992'); }
+  .collection-item[data-image*="new-arrivals"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/BronzeandRedFemaleStatueHoldingBall.jpg?v=1761284633'); }
+  .collection-item[data-image*="sales"]::before { background-image: url('https://cdn.shopify.com/s/files/1/0698/7012/5207/files/Broken_Limb_horse.jpg?v=1761289339'); }
+
+  .collection-text {
+    position: relative;
+    z-index: 2;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    line-height: 1.3;
+    color: #f8f8f8;
+    font-size: 1.8rem;
+    font-weight: 480;
+  }
+
+  .collection-item:hover {
+    border-color: rgb(var(--color-foreground));
+    box-shadow: 0 5px 15px rgba(var(--color-base-text), 0.08);
+    transform: translateY(-3px);
+  }
+
+  .collection-item:hover::before {
+    opacity: 0.3;
+  }
+
+  .collection-item:hover .collection-text {
+    color: rgb(var(--color-background));
+  }
+
+  .collection-item:focus-visible {
+    outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+    outline-offset: 0.3rem;
+    box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  }
+
+  @media (max-width: 1024px) {
+    .collections-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .rte-holder {
+      max-width: 95%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .collections-list {
+      gap: 1rem;
+    }
+    
+    .collections-page {
+      padding: 1.5rem 1rem;
+    }
+    
+    .rte-holder {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+    
+    .collection-text {
+      font-size: 1.4rem;
+      padding: 8px 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .collections-list {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    .collection-text {
+      font-size: 1.2rem;
+      padding: 6px 12px;
+    }
+  }
+
+  .template-page h1 {
+    display: none;
+  }
+</style>
