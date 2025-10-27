@@ -28,6 +28,7 @@
     }
   }
 
+  /* Quantity Selector Alignment Styles */
   .quantity-align-left {
     text-align: left;
   }
@@ -40,18 +41,187 @@
     text-align: right;
   }
 
-  /* If you need to align the inner elements differently */
-  .quantity-align-center .quantity__input,
-  .quantity-align-center .quantity__button {
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+  /* Center Alignment Specific Styles */
+  .quantity-align-center .quantity__label {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
   }
 
-  .quantity-align-right .quantity__input,
-  .quantity-align-right .quantity__button {
+  .quantity-align-center quantity-input {
+    display: inline-flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .quantity-align-center .quantity__input {
+    text-align: center;
+  }
+
+  .quantity-align-center .quantity__rules {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .quantity-align-center .quantity__rules-cart {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  /* Right Alignment Specific Styles */
+  .quantity-align-right .quantity__label {
+    display: block;
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  .quantity-align-right quantity-input {
+    display: inline-flex;
     justify-content: flex-end;
     margin-left: auto;
+  }
+
+  .quantity-align-right .quantity__input {
+    text-align: center;
+  }
+
+  .quantity-align-right .quantity__rules {
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  .quantity-align-right .quantity__rules-cart {
+    display: block;
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  /* Left Alignment Specific Styles (default) */
+  .quantity-align-left .quantity__label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .quantity-align-left quantity-input {
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+
+  .quantity-align-left .quantity__input {
+    text-align: center;
+  }
+
+  .quantity-align-left .quantity__rules {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .quantity-align-left .quantity__rules-cart {
+    display: block;
+    text-align: left;
+    margin-top: 4px;
+  }
+
+  /* Common Styles for All Alignments */
+  .quantity-align-left quantity-input,
+  .quantity-align-center quantity-input,
+  .quantity-align-right quantity-input {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .quantity-align-left .quantity__rules,
+  .quantity-align-center .quantity__rules,
+  .quantity-align-right .quantity__rules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .quantity-align-left .quantity__rules .divider,
+  .quantity-align-center .quantity__rules .divider,
+  .quantity-align-right .quantity__rules .divider {
+    display: inline-block;
+  }
+
+  .quantity-align-left .quantity__button,
+  .quantity-align-center .quantity__button,
+  .quantity-align-right .quantity__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .quantity-align-left .quantity__input,
+  .quantity-align-center .quantity__input,
+  .quantity-align-right .quantity__input {
+    width: 60px;
+    height: 40px;
+  }
+
+  /* Mobile Responsive Adjustments */
+  @media screen and (max-width: 749px) {
+    .quantity-align-left,
+    .quantity-align-center,
+    .quantity-align-right {
+      text-align: center;
+    }
+    
+    .quantity-align-left .quantity__label,
+    .quantity-align-center .quantity__label,
+    .quantity-align-right .quantity__label {
+      text-align: center;
+    }
+    
+    .quantity-align-left quantity-input,
+    .quantity-align-center quantity-input,
+    .quantity-align-right quantity-input {
+      justify-content: center;
+      margin: 0 auto;
+    }
+    
+    .quantity-align-left .quantity__rules,
+    .quantity-align-center .quantity__rules,
+    .quantity-align-right .quantity__rules {
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .quantity-align-left .quantity__rules-cart,
+    .quantity-align-center .quantity__rules-cart,
+    .quantity-align-right .quantity__rules-cart {
+      text-align: center;
+    }
+  }
+
+  /* Loading State Alignment */
+  .quantity-align-left .loading-overlay,
+  .quantity-align-center .loading-overlay,
+  .quantity-align-right .loading-overlay {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .quantity-align-center .loading-overlay {
+    justify-content: center;
+  }
+
+  .quantity-align-right .loading-overlay {
+    justify-content: flex-end;
+  }
+
+  /* Ensure proper spacing */
+  .quantity-align-left .quantity__rules-cart .loading-overlay,
+  .quantity-align-center .quantity__rules-cart .loading-overlay,
+  .quantity-align-right .quantity__rules-cart .loading-overlay {
+    display: inline-flex;
+    vertical-align: middle;
   }
 
 {%- endstyle -%}
