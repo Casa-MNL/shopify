@@ -1,174 +1,80 @@
 {% style %}
   .store-location-map {
-    padding: 80px 20px;
-    background-color: #fafafa;
+    padding: 60px 20px;
+    background-color: #f8f8f8;
   }
-
+  
   .store-location-map__container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
-    align-items: start;
+    gap: 40px;
   }
-
+  
   @media screen and (min-width: 768px) {
     .store-location-map__container {
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1fr;
     }
   }
-
+  
   .store-location-map__info {
-    padding: 0;
-  }
-
-  .store-location-map__title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #2c3e50;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-
-  .store-location-map__address {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #5d6d7e;
-    margin-bottom: 40px;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    border-left: 4px solid #3498db;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
-
-  .store-location-map__hours {
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
+  
+  .store-location-map__title {
+    font-size: 32px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+  
+  .store-location-map__address {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .store-location-map__frame {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
-
+  
+  .store-location-map__hours {
+    margin-top: 30px;
+  }
+  
   .store-location-map__hours-title {
-    font-size: 1.25rem;
+    font-size: 18px;
     font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    margin-bottom: 15px;
+    color: #4a4a4a;
   }
-
-  .store-location-map__hours-title::before {
-    content: "⏰";
-    font-size: 1.1rem;
-  }
-
+  
   .store-location-map__hours-list {
     list-style: none;
     padding: 0;
-    margin: 0;
   }
-
+  
   .store-location-map__hours-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #ecf0f1;
-  }
-
-  .store-location-map__hours-item:last-child {
-    border-bottom: none;
-  }
-
-  .store-location-map__hours-item span:first-child {
-    font-weight: 500;
-    color: #2c3e50;
-  }
-
-  .store-location-map__hours-item span:last-child {
-    color: #7f8c8d;
-    font-weight: 400;
-  }
-
-  .store-location-map__hours-item:last-child span:last-child {
-    color: #e67e22;
-    font-style: italic;
-  }
-
-  .store-location-map__map {
-    position: relative;
-  }
-
-  .store-location-map__frame {
-    width: 100%;
-    height: 500px;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .store-location-map__frame:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-  }
-
-  .store-location-map__map-link {
-    text-align: center;
-    margin-top: 16px;
-  }
-
-  .store-location-map__map-link a {
-    color: #3498db;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .store-location-map__map-link a:hover {
-    color: #2980b9;
-  }
-
-  .store-location-map__map-link a::after {
-    content: "↗";
-    font-size: 0.8rem;
-  }
-
-  /* Modern scroll animations */
-  .store-location-map__info,
-  .store-location-map__map {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .store-location-map.animated .store-location-map__info,
-  .store-location-map.animated .store-location-map__map {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .store-location-map.animated .store-location-map__map {
-    transition-delay: 0.2s;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
   }
 {% endstyle %}
 
-<div class="store-location-map" id="store-location-{{ section.id }}">
+<div class="store-location-map">
   <div class="store-location-map__container">
     <div class="store-location-map__info">
       <h2 class="store-location-map__title">{{ section.settings.location_title | default: "Visit Our Store" }}</h2>
       
       <div class="store-location-map__address">
-        {{ section.settings.location_address | default: "Tiyper · Maria Charcene · Kentdon Street" }}
+        {{ section.settings.location_address | default: "14.623159, 121.001594" }}
       </div>
       
       <div class="store-location-map__hours">
@@ -189,15 +95,13 @@
     <div class="store-location-map__map">
       <iframe 
         class="store-location-map__frame"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik&amp;marker=14.625156%2C120.999781"
-        loading="lazy"
-        title="Our Store Location Map"
-        allowfullscreen>
+        src="https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&amp;layer=mapnik"
+        loading="lazy">
       </iframe>
       
-      <div class="store-location-map__map-link">
+      <div style="text-align: center; margin-top: 10px;">
         <small>
-          <a href="https://www.openstreetmap.org/#map=18/14.625156/120.999781" target="_blank" rel="noopener">
+          <a href="https://www.openstreetmap.org/node/3237667642" target="_blank">
             View Larger Map
           </a>
         </small>
@@ -205,22 +109,3 @@
     </div>
   </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const mapSection = document.getElementById('store-location-{{ section.id }}');
-  
-  // Add animation class when section is in viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  if (mapSection) {
-    observer.observe(mapSection);
-  }
-});
-</script>
