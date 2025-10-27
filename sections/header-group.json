@@ -58,28 +58,10 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
-    },
-    "custom_liquid_QpwQbY": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "Hero Banner Slider",
-      "settings": {
-        "store_title": "Casa.MNL Display Room",
-        "store_address": "76-C Apo Street, Sta. Mesa Heights, Quezon City",
-        "map_embed_url": "https://www.openstreetmap.org/export/embed.html?bbox=120.9985%2C14.6245%2C121.0010%2C14.6260&layer=mapnik",
-        "map_link": "https://www.openstreetmap.org/node/3237667642",
-        "hours_title": "Operating Hours",
-        "city": "Quezon City",
-        "region": "Metro Manila",
-        "country": "Philippines",
-        "latitude": "14.6476",
-        "longitude": "121.0490"
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "custom_liquid_QpwQbY"
+    "header"
   ]
 }
