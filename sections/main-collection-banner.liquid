@@ -10,28 +10,27 @@
 {%- endstyle -%}
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} 
-  collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient" style="width: 100%; height: 180px; display: flex;">
+  collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient" 
+  style="width: 100%; height: 180px; display: flex; align-items: flex-start; justify-content: center; position: relative; overflow: hidden;">
 
-  <div class="collection-hero__with-title" style="align-items: top; position: relative; width: 100%; height: 180px; overflow: hidden;">
-    {%- if section.settings.show_collection_image and collection.image -%}
-        <img style="width: 100%; height: 180px; object-fit: cover;
-        display: flex;" alt="" src="{{ collection.image | image_url }}">
-    {%- endif -%}
+  {%- if section.settings.show_collection_image and collection.image -%}
+    <img 
+      style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;" 
+      alt="{{ collection.title | escape }}" 
+      src="{{ collection.image | image_url }}"
+    >
+  {%- endif -%}
 
-    <div class="collection-hero__inner page-width">
-      <div class="collection-hero__text-wrapper">
-        <h1 class="collection-hero__title" 
-            style="position: absolute; top: 50%; left: 50%; 
-            transform: translate(-50%, -50%); margin: 0; color: #F8F8F8; 
-            text-align: center; font-size: 4rem; letter-spacing: 2px; 
-            text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
-          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-          {{ collection.title | escape }}
-        </h1>
-      </div>
-    </div>
+  <div class="collection-hero__inner page-width" 
+       style="position: relative; z-index: 2; width: 100%; text-align: center; padding-top: 1rem;">
+    <h1 class="collection-hero__title" 
+        style="margin: 0; color: #F8F8F8; font-size: 4rem; letter-spacing: 2px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+      {{ collection.title | escape }}
+    </h1>
   </div>
 </div>
+
     {%- comment -%} 
   <div class="collection-hero__inner page-width">
     <div class="collection-hero__text-wrapper">
