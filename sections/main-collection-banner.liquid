@@ -29,10 +29,10 @@
       </div>
     </div>
 </div>
-  
+    {%- comment -%} 
   <div class="collection-hero__inner page-width">
     <div class="collection-hero__text-wrapper">
-      {%- comment -%}
+   
        <img style="width: 100%; height: 180px; object-fit: cover; display: flex;" alt="" src="{{ section.settings.banner_image | img_url: 'master' }}">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
@@ -64,9 +64,9 @@
       </div>
     {%- endif -%}
      
-      {%- endcomment -%} 
   </div>
 </div>
+      {%- endcomment -%} 
 
 {% schema %}
 {
