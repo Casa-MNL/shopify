@@ -12,7 +12,7 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} 
   collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient" style="width: 100%; height: 180px;">
 
-  <div class="collection-hero__with-title" style="position: fix; width: 100%; height: 180px; overflow: hidden;">
+  <div class="collection-hero__with-title" style="position: top; width: 100%; height: 180px; overflow: hidden;">
     {%- if section.settings.show_collection_image and collection.image -%}
         <img style="width: 100%; height: 180px; object-fit: cover;
         display: flex;" alt="" src="{{ collection.image | image_url }}">
