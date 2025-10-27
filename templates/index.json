@@ -496,16 +496,16 @@
             "collection": "hand-crafted-wire-art-sculpture"
           }
         },
-        "featured_collection_XkpY7P": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "wire-art-tree"
-          }
-        },
         "featured_collection_KFNzha": {
           "type": "featured_collection",
           "settings": {
             "collection": "hand-carved-skulls-by-master-artisans"
+          }
+        },
+        "featured_collection_XkpY7P": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "wire-art-tree"
           }
         },
         "featured_collection_MjqxUP": {
@@ -533,8 +533,8 @@
         "featured_collection_BdPALU",
         "featured_collection_CkBMdm",
         "featured_collection_HHkVkT",
-        "featured_collection_XkpY7P",
         "featured_collection_KFNzha",
+        "featured_collection_XkpY7P",
         "featured_collection_MjqxUP",
         "featured_collection_3Hmb8V",
         "featured_collection_Yf7ytr"
