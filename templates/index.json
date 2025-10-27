@@ -298,12 +298,12 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2bfa6a2_MgtkGM": {
+        "ai_gen_block_2bfa6a2_4MfEm3": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Wire Art Tree",
+          "name": "Hand Carved Skulls by Master Artisans - Layer 4",
           "settings": {
-            "section_title": "Wire Art Tree",
-            "collection": "wire-art-tree",
+            "section_title": "Hand Carved Skulls by Master Artisans",
+            "collection": "hand-carved-skulls-by-master-artisans",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -316,12 +316,12 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2bfa6a2_4MfEm3": {
+        "ai_gen_block_2bfa6a2_MgtkGM": {
           "type": "ai_gen_block_2bfa6a2",
-          "name": "Hand Carved Skulls by Master Artisans - Layer 4",
+          "name": "Wire Art Tree",
           "settings": {
-            "section_title": "Hand Carved Skulls by Master Artisans",
-            "collection": "hand-carved-skulls-by-master-artisans",
+            "section_title": "Wire Art Tree",
+            "collection": "wire-art-tree",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -357,8 +357,8 @@
         "ai_gen_block_2bfa6a2_Uci7Ft",
         "ai_gen_block_2bfa6a2_B9gT6n",
         "ai_gen_block_2bfa6a2_4exThk",
-        "ai_gen_block_2bfa6a2_MgtkGM",
         "ai_gen_block_2bfa6a2_4MfEm3",
+        "ai_gen_block_2bfa6a2_MgtkGM",
         "ai_gen_block_2bfa6a2_Mkr6c4"
       ],
       "settings": {}
@@ -496,16 +496,16 @@
             "collection": "hand-crafted-wire-art-sculpture"
           }
         },
-        "featured_collection_KFNzha": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "hand-carved-skulls-by-master-artisans"
-          }
-        },
         "featured_collection_XkpY7P": {
           "type": "featured_collection",
           "settings": {
             "collection": "wire-art-tree"
+          }
+        },
+        "featured_collection_KFNzha": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hand-carved-skulls-by-master-artisans"
           }
         },
         "featured_collection_MjqxUP": {
@@ -533,8 +533,8 @@
         "featured_collection_BdPALU",
         "featured_collection_CkBMdm",
         "featured_collection_HHkVkT",
-        "featured_collection_KFNzha",
         "featured_collection_XkpY7P",
+        "featured_collection_KFNzha",
         "featured_collection_MjqxUP",
         "featured_collection_3Hmb8V",
         "featured_collection_Yf7ytr"
