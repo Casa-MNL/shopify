@@ -12,9 +12,8 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width">
 
-    <img style="width: 100%; height: 180px; object-fit: cover; display: block;" alt="" src="{{ section.settings.banner_image | img_url: 'master' }}">
-
     <div class="collection-hero__text-wrapper">
+    <img style="width: 100%; height: 180px; object-fit: cover; display: flex;" alt="" src="{{ section.settings.banner_image | img_url: 'master' }}">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
