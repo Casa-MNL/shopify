@@ -17,6 +17,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .mobile-break {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .mobile-break {
+      display: inline;
+    }
+  }
+
 {%- endstyle -%}
 
 <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -135,7 +146,10 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
-                <br>
+                {%- comment -%}
+                  mobile res
+                {%- endcomment -%}
+                 <br class="mobile-break">
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
