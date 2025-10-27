@@ -14,8 +14,7 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": false,
-        "color_scheme": "background-2",
-        "banner_image": "shopify://shop_images/a-indoor-studio-podium-with-environment-concept-dark-pedestal-that-is-decorated-with-mirror-leaves-and-stone-minimal-abstract-background-3d-isolated-generative-ai-free-photo.jpg"
+        "color_scheme": "background-2"
       }
     },
     "product-grid": {
