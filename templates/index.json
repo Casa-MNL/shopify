@@ -539,6 +539,7 @@
         "featured_collection_3Hmb8V",
         "featured_collection_Yf7ytr"
       ],
+      "disabled": true,
       "name": "t:sections.collection-list.presets.name",
       "settings": {
         "title": "All Collections",
@@ -664,7 +665,7 @@
         "collection_9c9mEL": {
           "type": "collection",
           "settings": {
-            "collection": "category"
+            "collection": "all"
           }
         }
       },
@@ -673,13 +674,12 @@
         "product_fFGxht",
         "collection_9c9mEL"
       ],
-      "disabled": true,
       "name": "t:sections.collage.presets.name",
       "settings": {
         "heading": "Featured Content",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "desktop_layout": "left",
-        "mobile_layout": "collage",
+        "mobile_layout": "column",
         "card_styles": "none",
         "color_scheme": "background-1",
         "padding_top": 36,
