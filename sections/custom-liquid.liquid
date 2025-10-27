@@ -88,6 +88,68 @@
   .store-location-map__map small a:hover {
     color: #000;
   }
+
+   .store-location-map__contact-info {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+  }
+
+  .store-location-map__contact-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .store-location-map__contact-title::before {
+    content: "📞";
+    font-size: 1.1rem;
+  }
+
+  .store-location-map__contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .store-location-map__contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+    gap: 12px;
+  }
+
+  .store-location-map__contact-item:last-child {
+    border-bottom: none;
+  }
+
+  .store-location-map__contact-icon {
+    width: 20px;
+    text-align: center;
+    color: #3498db;
+  }
+
+  .store-location-map__contact-details {
+    flex: 1;
+  }
+
+  .store-location-map__contact-label {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.9rem;
+  }
+
+  .store-location-map__contact-value {
+    color: #7f8c8d;
+    font-size: 1rem;
+  }
 {% endstyle %}
 
 <div class="store-location-map">
