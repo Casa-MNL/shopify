@@ -21,9 +21,11 @@
   <div class="rte">
     {{ page.content }}
   </div>
-  <div class="rte-holder">  
-    {{ page.content }}
-  </div>
+  {%- comment -%}
+    <div class="rte-holder">  
+      {{ page.content }}
+    </div>
+  {%- endcomment -%}
 </div>
 
 {% schema %}
