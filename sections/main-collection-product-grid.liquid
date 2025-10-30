@@ -20,7 +20,15 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+    .parent-element {  
+      padding-top: 10px;
+    }
   }
+
+.parent-element { 
+    border-top: 1px solid rgba(var(--color-foreground), 0.5);
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.5); 
+}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
@@ -101,6 +109,8 @@
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+        
+      <div class="parent-element">
         <aside
           aria-labelledby="verticalTitle"
           class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
@@ -115,9 +125,11 @@
             paginate: paginate
           %}
         </aside>
+      </div>
       {%- endif -%}
 
       <div class="product-grid-container" id="ProductGridContainer">
+        <br>
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>

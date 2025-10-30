@@ -18,6 +18,13 @@
   <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
   </h1>
+  {%- comment -%}
+    <div class="rte-holder">  
+      {{ page.content }}
+    </div>
+  {%- endcomment -%}
+</div>
+<div class="rte-holder">  
   <div class="rte">
     {{ page.content }}
   </div>

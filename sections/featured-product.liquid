@@ -17,6 +17,184 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .mobile-break {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .mobile-break {
+      display: inline;
+    }
+  }
+
+  /* Quantity Selector Alignment Styles */
+  .quantity-align-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .quantity-align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quantity-align-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  /* Label Alignment */
+  .quantity-align-left .quantity__label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .quantity-align-center .quantity__label {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .quantity-align-right .quantity__label {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  /* Quantity Input Container */
+  .quantity-align-left quantity-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .quantity-align-center quantity-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quantity-align-right quantity-input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* Quantity Rules Alignment */
+  .quantity-align-left .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .quantity-align-center .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .quantity-align-right .quantity__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  /* Cart Quantity Rules */
+  .quantity-align-left .quantity__rules-cart {
+    text-align: left;
+    width: 100%;
+  }
+
+  .quantity-align-center .quantity__rules-cart {
+    text-align: center;
+    width: 100%;
+  }
+
+  .quantity-align-right .quantity__rules-cart {
+    text-align: right;
+    width: 100%;
+  }
+
+  /* Common Quantity Input Styles */
+  .quantity-align-left .quantity__input,
+  .quantity-align-center .quantity__input,
+  .quantity-align-right .quantity__input {
+    text-align: center;
+    width: 60px;
+    height: 40px;
+  }
+
+  .quantity-align-left .quantity__button,
+  .quantity-align-center .quantity__button,
+  .quantity-align-right .quantity__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+  /* Loading States */
+  .quantity-align-left .quantity__rules-cart .loading-overlay,
+  .quantity-align-center .quantity__rules-cart .loading-overlay,
+  .quantity-align-right .quantity__rules-cart .loading-overlay {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 749px) {
+    .quantity-align-left,
+    .quantity-align-center,
+    .quantity-align-right {
+      align-items: center;
+      text-align: center;
+    }
+    
+    .quantity-align-left .quantity__label,
+    .quantity-align-center .quantity__label,
+    .quantity-align-right .quantity__label {
+      text-align: center;
+    }
+    
+    .quantity-align-left quantity-input,
+    .quantity-align-center quantity-input,
+    .quantity-align-right quantity-input {
+      justify-content: center;
+    }
+    
+    .quantity-align-left .quantity__rules,
+    .quantity-align-center .quantity__rules,
+    .quantity-align-right .quantity__rules {
+      align-items: center;
+      text-align: center;
+    }
+    
+    .quantity-align-left .quantity__rules-cart,
+    .quantity-align-center .quantity__rules-cart,
+    .quantity-align-right .quantity__rules-cart {
+      text-align: center;
+    }
+  }
+
 {%- endstyle -%}
 
 <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -135,6 +313,10 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
+                {%- comment -%}
+                  mobile res
+                {%- endcomment -%}
+                 <br class="mobile-break"><br class="mobile-break">
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
@@ -189,8 +371,8 @@
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
-                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
-                  {{ block.shopify_attributes }}
+                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %} quantity-align-{{ block.settings.alignment }}"
+                  {{ block.shopify_attributes }}                  
                 >
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
                   {% # theme-check-disable %}
@@ -621,7 +803,29 @@
     {
       "type": "quantity_selector",
       "name": "t:sections.featured-product.blocks.quantity_selector.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Quantity selector alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center", 
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ]
     },
     {
       "type": "variant_picker",

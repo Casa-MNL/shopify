@@ -9,14 +9,44 @@
   }
 {%- endstyle -%}
 
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} 
+  collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient" 
+  style="width: 100%; height: 180px; display: flex; 
+  align-items: center; justify-content: center; 
+  position: relative; overflow: hidden;">
+
+  {%- if section.settings.show_collection_image and collection.image -%}
+    <img 
+      style="width: 100%; height: 100%; 
+      object-fit: cover; position: absolute; 
+      top: 0; left: 0; z-index: 1;
+      background-color: rgb(var(--color-foreground)); 
+      color: rgb(var(--color-background));
+      filter: brightness(0.7);" 
+      alt="{{ collection.title | escape }}" 
+      src="{{ collection.image | image_url }}"
+    >
+  {%- endif -%}
+
+  <div
+       style="position: relative; z-index: 2; width: 100%; text-align: center; padding-top: 1rem;">
+    <h1 class="collection-hero__title" 
+        style="margin: 0; color: #F8F8F8; font-size: 4rem; letter-spacing: 2px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+      {{ collection.title | escape }}
+    </h1>
+  </div>
+</div>
+
+    {%- comment -%} 
   <div class="collection-hero__inner page-width">
     <div class="collection-hero__text-wrapper">
+   
+       <img style="width: 100%; height: 180px; object-fit: cover; display: flex;" alt="" src="{{ section.settings.banner_image | img_url: 'master' }}">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
-      </h1>
-
+      </h1> 
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
@@ -42,8 +72,10 @@
         >
       </div>
     {%- endif -%}
+     
   </div>
 </div>
+      {%- endcomment -%} 
 
 {% schema %}
 {
@@ -71,30 +103,21 @@
       "type": "select",
       "id": "color_scheme",
       "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
+        { "value": "accent-1", "label": "t:sections.all.colors.accent_1.label" },
+        { "value": "accent-2", "label": "t:sections.all.colors.accent_2.label" },
+        { "value": "background-1", "label": "t:sections.all.colors.background_1.label" },
+        { "value": "background-2", "label": "t:sections.all.colors.background_2.label" },
+        { "value": "inverse", "label": "t:sections.all.colors.inverse.label" }
       ],
       "default": "background-1",
       "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Custom Banner Image"
     }
   ]
 }
 {% endschema %}
+

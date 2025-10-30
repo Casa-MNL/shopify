@@ -347,6 +347,12 @@ body,
   margin: 7rem auto;
 }
 
+
+.rte-holder {
+  max-width: 90%;
+  margin: 0 auto 3rem;
+}
+
 .rte-width {
   max-width: 82rem;
   margin: 0 auto 2rem;
