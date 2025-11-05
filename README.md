@@ -15,8 +15,11 @@ Admin API access token
 Use your access token to request data from the Admin API.
 
 To protect your data, you’ll only be able to reveal your Admin API token once. Copy and save your Admin API access token in a secure place.
+
 Admin API access token text field
+
 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
+
 Created Nov 5, 2025 at 07:07 UTC
 
 Keep your access tokens secure. Only share them with developers that you trust to safely access your data.
