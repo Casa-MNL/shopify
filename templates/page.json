@@ -18,6 +18,7 @@
     },
     "contact_form_hCim6t": {
       "type": "contact-form",
+      "disabled": true,
       "name": "t:sections.contact-form.presets.name",
       "settings": {
         "heading": "",
@@ -29,6 +30,7 @@
     },
     "custom_liquid_iKXMcA": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "Store Location Map",
       "settings": {
         "store_title": "Casa.MNL Display Room",
