@@ -132,12 +132,6 @@
             "collection": "decorative-objects"
           }
         },
-        "featured_collection_rV3BV3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "hand-crafted-skulls-by-master-artisans"
-          }
-        },
         "featured_collection_ARkzCr": {
           "type": "featured_collection",
           "settings": {
@@ -150,6 +144,12 @@
             "collection": "wire-art-sculpture"
           }
         },
+        "featured_collection_rV3BV3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hand-crafted-skulls-by-master-artisans"
+          }
+        },
         "featured_collection_AFLJGh": {
           "type": "featured_collection",
           "settings": {
@@ -159,7 +159,7 @@
         "featured_collection_qXC6QA": {
           "type": "featured_collection",
           "settings": {
-            "collection": "toy-art-collectibles"
+            "collection": "others"
           }
         },
         "featured_collection_Fg7k4Q": {
@@ -174,9 +174,9 @@
         "featured_collection_WTrqQz",
         "featured_collection_xMrHnP",
         "featured_collection_bML3D9",
-        "featured_collection_rV3BV3",
         "featured_collection_ARkzCr",
         "featured_collection_rWcJAA",
+        "featured_collection_rV3BV3",
         "featured_collection_AFLJGh",
         "featured_collection_qXC6QA",
         "featured_collection_Fg7k4Q"
