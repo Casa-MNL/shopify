@@ -401,6 +401,7 @@
       "name": "Image with text Layer 1",
       "settings": {
         "section_size": "medium",
+        "image": "shopify://shop_images/SEO_Banner.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -448,6 +449,7 @@
       "name": "Image with text Layer 2",
       "settings": {
         "section_size": "medium",
+        "image": "shopify://shop_images/30-Hero_Banner_10.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -649,19 +651,21 @@
         "image_yNm9fL": {
           "type": "image",
           "name": "Golden Tiger",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/DF1-002-MNL-MS-PMA-02.jpg"
+          }
         },
         "product_fFGxht": {
           "type": "product",
           "settings": {
-            "product": "the-featured-collection-panther-on-globe-art-deco-statue",
+            "product": "tagumpay-the-silver-focus-sculpture",
             "second_image": true
           }
         },
         "collection_9c9mEL": {
           "type": "collection",
           "settings": {
-            "collection": "all"
+            "collection": "frontpage"
           }
         }
       },
