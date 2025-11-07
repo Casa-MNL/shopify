@@ -18,7 +18,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/New_Hero_Banner_1.png",
+            "image": "shopify://shop_images/Hero_Banner_1.png",
             "heading": "Welcome to Casa.MNL",
             "heading_size": "h2",
             "subheading": "<em>where every home tells a story, filled with things you love and reflects who you are.</em>",
@@ -39,7 +39,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/Hero_Banner_2e.png",
+            "image": "shopify://shop_images/Hero_Banner_2.png",
             "heading": "Premium Wire Art Collection",
             "heading_size": "h2",
             "subheading": "",
@@ -60,7 +60,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/Hero_Banner_Skull_2.png",
+            "image": "shopify://shop_images/Hero_Banner_3.png",
             "heading": "",
             "heading_size": "h2",
             "subheading": "—<em>Tap to explore the Full Collection.</em>",
@@ -81,7 +81,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/New_Hero_Banner_5.png",
+            "image": "shopify://shop_images/Hero_Banner_4.png",
             "heading": "Home Art Decor",
             "heading_size": "h1",
             "subheading": "Artisan decor—for a meaningful story.",
@@ -102,7 +102,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": true,
-            "image": "shopify://shop_images/Hero_Banner_6b.png",
+            "image": "shopify://shop_images/Hero_Banner_5.png",
             "heading": "Modern Pop-Art",
             "heading_size": "h1",
             "subheading": "<em>Tap to see Full Collection</em>",
@@ -123,7 +123,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": true,
-            "image": "shopify://shop_images/Hero_Banner_3.png",
+            "image": "shopify://shop_images/Hero_Banner_6.png",
             "heading": "Casa.MNL",
             "heading_size": "h1",
             "subheading": "— We're Here to Help",
@@ -401,7 +401,6 @@
       "name": "Image with text Layer 1",
       "settings": {
         "section_size": "medium",
-        "image": "shopify://shop_images/Hero_Banner_1.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -449,7 +448,6 @@
       "name": "Image with text Layer 2",
       "settings": {
         "section_size": "medium",
-        "image": "shopify://shop_images/Hero_Banner_10.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -651,9 +649,7 @@
         "image_yNm9fL": {
           "type": "image",
           "name": "Golden Tiger",
-          "settings": {
-            "image": "shopify://shop_images/featured_item_1b.jpg"
-          }
+          "settings": {}
         },
         "product_fFGxht": {
           "type": "product",
