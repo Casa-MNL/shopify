@@ -14,7 +14,8 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": true,
-        "color_scheme": "background-2"
+        "color_scheme": "background-2",
+        "banner_image": "shopify://shop_images/DF1-008-MNL-MS-ZUS-01.jpg"
       }
     },
     "product-grid": {
