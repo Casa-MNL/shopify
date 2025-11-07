@@ -166,7 +166,7 @@
           "type": "featured_collection",
           "name": "New Arrivals",
           "settings": {
-            "collection": "frontpage",
+            "collection": "new-arrival",
             "products_to_show": 1,
             "show_description": false,
             "show_view_all": true,
@@ -177,7 +177,7 @@
           "type": "featured_collection",
           "name": "Decorative Figures",
           "settings": {
-            "collection": "all",
+            "collection": "frontpage",
             "products_to_show": 1,
             "show_description": false,
             "show_view_all": true,
@@ -188,7 +188,7 @@
           "type": "featured_collection",
           "name": "Sale Items",
           "settings": {
-            "collection": "gardening",
+            "collection": "sale",
             "products_to_show": 1,
             "show_description": true,
             "show_view_all": true,
