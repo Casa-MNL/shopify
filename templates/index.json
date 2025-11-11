@@ -285,7 +285,7 @@
           "name": "Premium Metal Wire Art Sculpture",
           "settings": {
             "section_title": "Premium Metal Wire Art Sculpture",
-            "collection": "hand-crafted-wire-art-sculpture",
+            "collection": "premium-hand-crafted-wire-art-sculpture",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -303,7 +303,7 @@
           "name": "Hand Carved Skulls by Master Artisans - Layer 4",
           "settings": {
             "section_title": "Hand Carved Skulls by Master Artisans",
-            "collection": "hand-carved-skulls-by-master-artisans",
+            "collection": "hand-crafted-skulls-by-master-artisans",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -321,7 +321,7 @@
           "name": "Wire Art Bonsai Tree",
           "settings": {
             "section_title": "Wire Art Bonsai Tree",
-            "collection": "wire-art-tree",
+            "collection": "wire-art-sculpture",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
