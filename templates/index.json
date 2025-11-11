@@ -184,13 +184,12 @@
             "block_show_prices": true
           }
         },
-        "featured_collection_pbKPkH": {
+        "featured_collection_Jkjrhm": {
           "type": "featured_collection",
-          "name": "Sale Items",
           "settings": {
             "collection": "sale",
             "products_to_show": 1,
-            "show_description": true,
+            "show_description": false,
             "show_view_all": true,
             "block_show_prices": true
           }
@@ -199,7 +198,7 @@
       "block_order": [
         "featured_collection_UydNTa",
         "featured_collection_UV6rde",
-        "featured_collection_pbKPkH"
+        "featured_collection_Jkjrhm"
       ],
       "settings": {
         "title": "<strong>Featured Albums</strong>",
