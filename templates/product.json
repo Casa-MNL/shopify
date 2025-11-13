@@ -72,12 +72,14 @@
         "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "none",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
+        "show_trust_badges": true,
+        "enable_skeleton_loading": true,
         "padding_top": 64,
         "padding_bottom": 20
       }
