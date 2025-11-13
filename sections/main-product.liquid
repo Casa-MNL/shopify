@@ -2,7 +2,6 @@
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
-  data-product-handle="{{ product.handle }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
@@ -18,134 +17,6 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
-    /* Enhanced CSS Variables for Design System */
-    :root {
-      --touch-target-min: 44px;
-      --border-radius-sm: 4px;
-      --border-radius-md: 8px;
-      --border-radius-lg: 12px;
-      --transition-standard: 0.2s ease-in-out;
-    }
-
-    /* Trust badges styling */
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 16px 0;
-      padding: 12px;
-      background: var(--color-background-alt);
-      border-radius: var(--border-radius-md);
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.875rem;
-      color: var(--color-foreground);
-    }
-
-    .trust-badge svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    /* Enhanced inventory styling */
-    .product__inventory {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 12px 0;
-    }
-
-    .inventory-progress {
-      flex: 1;
-      height: 4px;
-      background: var(--color-border);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .inventory-progress-fill {
-      height: 100%;
-      background: var(--color-success);
-      transition: width var(--transition-standard);
-    }
-
-    /* Skeleton loading */
-    .product-skeleton {
-      display: none;
-    }
-
-    [data-product-loading] .product-skeleton {
-      display: block;
-    }
-
-    [data-product-loading] .product-content {
-      display: none;
-    }
-
-    .skeleton-block {
-      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-      background-size: 200% 100%;
-      animation: loading 1.5s infinite;
-      border-radius: var(--border-radius-sm);
-    }
-
-    @keyframes loading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* Enhanced mobile gallery */
-    @media (max-width: 749px) {
-      .product-gallery-sticky {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: var(--color-background);
-      }
-      
-      .thumbnail-slider {
-        scroll-padding: 0 16px;
-        scroll-snap-type: x mandatory;
-      }
-      
-      .thumbnail-slider::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
-    /* Touch-friendly enhancements */
-    .variant-option,
-    .quantity__button,
-    .buy-buttons__button {
-      min-height: var(--touch-target-min);
-      min-width: var(--touch-target-min);
-    }
-
-    .quantity__input {
-      font-size: 16px; /* Prevent iOS zoom */
-    }
-
-    /* Enhanced error states */
-    .form-errors {
-      margin: 12px 0;
-      padding: 12px;
-      background: var(--color-error-background);
-      border: 1px solid var(--color-error);
-      border-radius: var(--border-radius-md);
-      color: var(--color-error);
-    }
-
-    .error-message {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -156,12 +27,9 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer" type="module"></script>
-  <script src="{{ 'product-enhancements.js' | asset_url }}" defer="defer"></script>
-  
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
-  
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
@@ -187,27 +55,10 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <!-- Skeleton Loading State -->
-  <div class="product-skeleton" data-product-loading>
-    <div class="grid grid--1-col grid--2-col-tablet">
-      <div class="grid__item">
-        <div class="skeleton-block" style="height: 400px; margin-bottom: 16px;"></div>
-        <div class="skeleton-block" style="height: 80px; width: 100%;"></div>
-      </div>
-      <div class="grid__item">
-        <div class="skeleton-block" style="height: 32px; width: 70%; margin-bottom: 16px;"></div>
-        <div class="skeleton-block" style="height: 24px; width: 40%; margin-bottom: 24px;"></div>
-        <div class="skeleton-block" style="height: 48px; width: 100%; margin-bottom: 16px;"></div>
-        <div class="skeleton-block" style="height: 52px; width: 100%;"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %} product-content">
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %} product-gallery-sticky">
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
-    
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
@@ -217,33 +68,10 @@
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-        <!-- Trust Badges -->
-        <div class="trust-badges" role="region" aria-label="Trust and security badges">
-          <div class="trust-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M12 15l-4-4m0 0l4-4m-4 4h8m-4 4v4m0 0h4m-4 0H8"/>
-            </svg>
-            <span>Guaranteed Shipping</span>
-          </div>
-          <div class="trust-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-            <span>Secure Checkout</span>
-          </div>
-          <div class="trust-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-            <span>No Return Policy</span>
-          </div>
-        </div>
-
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
-              
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -251,13 +79,15 @@
               >
                 {{- block.settings.text -}}
               </p>
-              
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
-                {% comment %} Removed duplicate title rendering {% endcomment %}
+                <a href="{{ product.url }}" class="product__title">
+                  <h2 class="h1">
+                    {{ product.title | escape }}
+                  </h2>
+                </a>
               </div>
-              
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -267,7 +97,6 @@
                   price_class: 'price--large'
                 -%}
               </div>
-              
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__tax caption rte">
                   {%- if shop.taxes_included -%}
@@ -278,7 +107,6 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-              
               <div {{ block.shopify_attributes }}>
                 {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                 {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -287,9 +115,8 @@
                   {% render 'selling-plans' %}
                 {%- endform -%}
               </div>
-              
             {%- when 'inventory' -%}
-              <div
+              <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
                 {{ block.shopify_attributes }}
                 id="Inventory-{{ section.id }}"
@@ -298,59 +125,49 @@
                 {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
                   {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
                     {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
-                      <svg width="16" height="16" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" fill="rgb(238,148,65, 0.3)"/>
-                        <circle cx="8" cy="8" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
+                      <svg width="15" height="15" aria-hidden="true">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(238,148,65, 0.3)"/>
+                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        <span>{{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}</span>
+                        {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
                       {%- else -%}
-                        <span>{{- 'products.product.inventory_low_stock' | t -}}</span>
+                        {{- 'products.product.inventory_low_stock' | t -}}
                       {%- endif -%}
                     {%- else -%}
-                      <svg width="16" height="16" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" fill="rgb(62,214,96, 0.3)"/>
-                        <circle cx="8" cy="8" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                      <svg width="15" height="15" aria-hidden="true">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        <span>{{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}</span>
+                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
                       {%- else -%}
-                        <span>{{- 'products.product.inventory_in_stock' | t -}}</span>
+                          {{- 'products.product.inventory_in_stock' | t -}}
                       {%- endif -%}
                     {%- endif -%}
-                    
-                    <!-- Inventory Progress Bar -->
-                    {%- if block.settings.show_inventory_quantity and product.selected_or_first_available_variant.inventory_quantity <= 20 -%}
-                      <div class="inventory-progress" role="progressbar" aria-valuenow="{{ product.selected_or_first_available_variant.inventory_quantity }}" aria-valuemin="0" aria-valuemax="20">
-                        <div class="inventory-progress-fill" style="width: {{ product.selected_or_first_available_variant.inventory_quantity | times: 5 }}%"></div>
-                      </div>
-                    {%- endif -%}
-                    
                   {%- else -%}
                     {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
-                      <svg width="16" height="16" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" fill="rgb(62,214,96, 0.3)"/>
-                        <circle cx="8" cy="8" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
+                      <svg width="15" height="15" aria-hidden="true">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
+                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
                       </svg>
-                      <span>{{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}</span>
+                      {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
                     {%- else -%}
-                      <svg width="16" height="16" aria-hidden="true">
-                        <circle cx="8" cy="8" r="7" fill="rgb(200,200,200, 0.3)"/>
-                        <circle cx="8" cy="8" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
+                      <svg width="15" height="15" aria-hidden="true">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)"/>
+                        <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
                       </svg>
-                      <span>{{- 'products.product.inventory_out_of_stock' | t -}}</span>
+                      {{- 'products.product.inventory_out_of_stock' | t -}}
                     {%- endif -%}
                   {%- endif -%}
                 {%- endif -%}
-              </div>
-              
+              </p>
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ product.description }}
                 </div>
               {%- endif -%}
-              
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -360,10 +177,8 @@
               >
                 <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
               </p>
-              
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
-              
             {%- when 'collapsible_tab' -%}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -382,7 +197,6 @@
                   </div>
                 </details>
               </div>
-              
             {%- when 'quantity_selector' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
@@ -413,7 +227,7 @@
                   </span>
                 </label>
                 <quantity-input class="quantity">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button" aria-label="{{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}">
+                  <button class="quantity__button no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">
                       {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                     </span>
@@ -434,9 +248,8 @@
                     step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
                     value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                     form="{{ product_form_id }}"
-                    aria-live="polite"
                   />
-                  <button class="quantity__button no-js-hidden" name="plus" type="button" aria-label="{{- 'products.product.quantity.increase' | t: product: product.title | escape -}}">
+                  <button class="quantity__button no-js-hidden" name="plus" type="button">
                     <span class="visually-hidden">
                       {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                     </span>
@@ -470,7 +283,6 @@
                   {%- endif -%}
                 </div>
               </div>
-              
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -489,7 +301,6 @@
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                 {{- block.settings.text -}}
               </a>
-              
             {%- when 'share' -%}
               {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
               {% render 'share-button',
@@ -499,13 +310,8 @@
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-              
             {%- when 'buy_buttons' -%}
-              <!-- Form Errors Container -->
-              <div class="form-errors" role="alert" aria-live="polite" style="display: none;"></div>
-              
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-              
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -542,7 +348,6 @@
                   </span>
                 </p>
               {%- endif -%}
-              
             {%- when 'complementary' -%}
               <product-recommendations class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary">
                 {%- if recommendations.performed and recommendations.products_count > 0 -%}
@@ -624,21 +429,18 @@
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
               </product-recommendations>
-              
             {%- when 'icon-with-text' -%}
               {% render 'icon-with-text',
                 block: block
               %}
           {%- endcase -%}
         {%- endfor -%}
-        
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
         </a>
       </product-info>
     </div>
-    
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">
@@ -712,98 +514,6 @@
         hiddenInput.value = event.currentTarget.value;
       });
     });
-
-    // Enhanced product functionality
-    class ProductEnhancements {
-      constructor() {
-        this.sectionId = '{{ section.id }}';
-        this.init();
-      }
-
-      init() {
-        this.setupSkeletonLoading();
-        this.setupFormValidation();
-        this.setupPerformanceTracking();
-      }
-
-      setupSkeletonLoading() {
-        // Hide skeleton when product is loaded
-        setTimeout(() => {
-          document.querySelector('[data-product-loading]').style.display = 'none';
-          document.querySelector('.product-content').style.display = 'block';
-        }, 500);
-      }
-
-      setupFormValidation() {
-        const form = document.querySelector('#product-form-{{ section.id }}');
-        if (!form) return;
-
-        form.addEventListener('submit', (e) => {
-          const errors = this.validateForm(form);
-          if (errors.length > 0) {
-            e.preventDefault();
-            this.displayFormErrors(errors);
-          }
-        });
-      }
-
-      validateForm(form) {
-        const errors = [];
-        const variantSelect = form.querySelector('[name="id"]');
-        
-        if (!variantSelect || !variantSelect.value) {
-          errors.push('Please select a variant');
-        }
-
-        const quantityInput = form.querySelector('[name="quantity"]');
-        if (quantityInput && parseInt(quantityInput.value) < 1) {
-          errors.push('Quantity must be at least 1');
-        }
-
-        return errors;
-      }
-
-      displayFormErrors(errors) {
-        const errorContainer = document.querySelector('.form-errors');
-        if (!errorContainer) return;
-
-        errorContainer.innerHTML = errors.map(error => 
-          `<div class="error-message">${error}</div>`
-        ).join('');
-        errorContainer.style.display = 'block';
-
-        // Scroll to errors
-        errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-
-      setupPerformanceTracking() {
-        // Track user interactions for analytics
-        const startTime = performance.now();
-        
-        document.addEventListener('click', (e) => {
-          if (e.target.closest('.buy-buttons__button')) {
-            this.trackEvent('add_to_cart_click');
-          }
-          if (e.target.closest('.variant-option')) {
-            this.trackEvent('variant_selection');
-          }
-        });
-
-        // Track time to first interaction
-        document.addEventListener('click', () => {
-          const timeToFirstClick = performance.now() - startTime;
-          this.trackEvent('first_interaction', { time: Math.round(timeToFirstClick) });
-        }, { once: true });
-      }
-
-      trackEvent(eventName, data = {}) {
-        // Implementation for analytics tracking
-        console.log('Track:', eventName, data);
-      }
-    }
-
-    // Initialize enhancements
-    new ProductEnhancements();
   </script>
 
   {%- liquid
@@ -859,6 +569,7 @@
     }
   </script>
   <script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
+  {% comment %}<script src="{{ 'selling-plan-docs.js' | asset_url }}" defer="defer"></script>{% endcomment %}
 </section>
 
 {% schema %}
@@ -979,13 +690,6 @@
           "id": "show_inventory_quantity",
           "label": "t:sections.main-product.blocks.inventory.settings.show_inventory_quantity.label",
           "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_inventory_progress",
-          "label": "Show inventory progress bar",
-          "default": true,
-          "info": "Shows a visual progress bar when inventory is low"
         }
       ]
     },
@@ -2347,24 +2051,6 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
-    },
-    {
-      "type": "header",
-      "content": "Enhanced Features"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_trust_badges",
-      "default": true,
-      "label": "Show trust badges",
-      "info": "Display security and trust indicators"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_skeleton_loading",
-      "default": true,
-      "label": "Enable skeleton loading",
-      "info": "Show loading placeholders while content loads"
     },
     {
       "type": "header",
