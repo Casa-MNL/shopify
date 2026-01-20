@@ -18,12 +18,12 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/New_Hero_Banner_1.png",
+            "image": "shopify://shop_images/Hero_Banner_1.png",
             "heading": "Welcome to Casa.MNL",
             "heading_size": "h2",
             "subheading": "<em>where every home tells a story, filled with things you love and reflects who you are.</em>",
             "button_label": "Shop All",
-            "link": "shopify://collections",
+            "link": "shopify://collections/all",
             "button_style_secondary": true,
             "box_align": "bottom-left",
             "show_text_box": false,
@@ -39,12 +39,12 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/Hero_Banner_2e.png",
+            "image": "shopify://shop_images/Hero_Banner_2.png",
             "heading": "Premium Wire Art Collection",
             "heading_size": "h2",
             "subheading": "",
             "button_label": "Shop Now",
-            "link": "shopify://collections/hand-crafted-wire-art-sculpture",
+            "link": "shopify://collections/premium-hand-crafted-wire-art-sculpture",
             "button_style_secondary": true,
             "box_align": "middle-right",
             "show_text_box": false,
@@ -60,12 +60,12 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/Hero_Banner_Skull_2.png",
+            "image": "shopify://shop_images/Hero_Banner_3.png",
             "heading": "",
             "heading_size": "h2",
             "subheading": "—<em>Tap to explore the Full Collection.</em>",
             "button_label": "Shop Now",
-            "link": "shopify://collections/decorative-figures",
+            "link": "shopify://collections/hand-crafted-skulls-by-master-artisans",
             "button_style_secondary": true,
             "box_align": "bottom-right",
             "show_text_box": false,
@@ -81,12 +81,12 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": false,
-            "image": "shopify://shop_images/New_Hero_Banner_5.png",
+            "image": "shopify://shop_images/Hero_Banner_4.png",
             "heading": "Home Art Decor",
             "heading_size": "h1",
             "subheading": "Artisan decor—for a meaningful story.",
             "button_label": "Shop All",
-            "link": "shopify://collections",
+            "link": "shopify://collections/frontpage",
             "button_style_secondary": true,
             "box_align": "middle-center",
             "show_text_box": false,
@@ -102,7 +102,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": true,
-            "image": "shopify://shop_images/Hero_Banner_6b.png",
+            "image": "shopify://shop_images/Hero_Banner_5.png",
             "heading": "Modern Pop-Art",
             "heading_size": "h1",
             "subheading": "<em>Tap to see Full Collection</em>",
@@ -123,7 +123,7 @@
           "settings": {
             "hide_on_mobile": false,
             "hide_on_desktop": true,
-            "image": "shopify://shop_images/Hero_Banner_3.png",
+            "image": "shopify://shop_images/Hero_Banner_6.png",
             "heading": "Casa.MNL",
             "heading_size": "h1",
             "subheading": "— We're Here to Help",
@@ -166,7 +166,7 @@
           "type": "featured_collection",
           "name": "New Arrivals",
           "settings": {
-            "collection": "frontpage",
+            "collection": "new-arrival",
             "products_to_show": 1,
             "show_description": false,
             "show_view_all": true,
@@ -177,20 +177,19 @@
           "type": "featured_collection",
           "name": "Decorative Figures",
           "settings": {
-            "collection": "all",
+            "collection": "frontpage",
             "products_to_show": 1,
             "show_description": false,
             "show_view_all": true,
             "block_show_prices": true
           }
         },
-        "featured_collection_pbKPkH": {
+        "featured_collection_Jkjrhm": {
           "type": "featured_collection",
-          "name": "Sale Items",
           "settings": {
-            "collection": "gardening",
+            "collection": "sale",
             "products_to_show": 1,
-            "show_description": true,
+            "show_description": false,
             "show_view_all": true,
             "block_show_prices": true
           }
@@ -199,7 +198,7 @@
       "block_order": [
         "featured_collection_UydNTa",
         "featured_collection_UV6rde",
-        "featured_collection_pbKPkH"
+        "featured_collection_Jkjrhm"
       ],
       "settings": {
         "title": "<strong>Featured Albums</strong>",
@@ -285,7 +284,7 @@
           "name": "Premium Metal Wire Art Sculpture",
           "settings": {
             "section_title": "Premium Metal Wire Art Sculpture",
-            "collection": "hand-crafted-wire-art-sculpture",
+            "collection": "premium-hand-crafted-wire-art-sculpture",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -303,7 +302,7 @@
           "name": "Hand Carved Skulls by Master Artisans - Layer 4",
           "settings": {
             "section_title": "Hand Carved Skulls by Master Artisans",
-            "collection": "hand-carved-skulls-by-master-artisans",
+            "collection": "hand-crafted-skulls-by-master-artisans",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -321,7 +320,7 @@
           "name": "Wire Art Bonsai Tree",
           "settings": {
             "section_title": "Wire Art Bonsai Tree",
-            "collection": "wire-art-tree",
+            "collection": "wire-art-sculpture",
             "product_limit": 4,
             "show_view_all": true,
             "background_color": "white",
@@ -401,7 +400,7 @@
       "name": "Image with text Layer 1",
       "settings": {
         "section_size": "medium",
-        "image": "shopify://shop_images/Hero_Banner_1.png",
+        "image": "shopify://shop_images/SEO_Banner.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -449,7 +448,7 @@
       "name": "Image with text Layer 2",
       "settings": {
         "section_size": "medium",
-        "image": "shopify://shop_images/Hero_Banner_10.png",
+        "image": "shopify://shop_images/30-Hero_Banner_10.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -652,20 +651,20 @@
           "type": "image",
           "name": "Golden Tiger",
           "settings": {
-            "image": "shopify://shop_images/featured_item_1b.jpg"
+            "image": "shopify://shop_images/DF1-002-MNL-MS-PMA-02.jpg"
           }
         },
         "product_fFGxht": {
           "type": "product",
           "settings": {
-            "product": "the-featured-collection-panther-on-globe-art-deco-statue",
+            "product": "regal-silver-puma-perched-on-glass-sphere",
             "second_image": true
           }
         },
         "collection_9c9mEL": {
           "type": "collection",
           "settings": {
-            "collection": "all"
+            "collection": "frontpage"
           }
         }
       },

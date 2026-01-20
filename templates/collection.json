@@ -14,13 +14,14 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": true,
-        "color_scheme": "background-2"
+        "color_scheme": "background-2",
+        "banner_image": "shopify://shop_images/DF1-008-MNL-MS-ZUS-01.jpg"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 12,
+        "products_per_page": 24,
         "columns_desktop": 4,
         "image_ratio": "square",
         "show_secondary_image": true,
@@ -91,7 +92,7 @@
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "product": "the-featured-collection-panther-on-globe-art-deco-statue",
+        "product": "regal-silver-puma-perched-on-glass-sphere",
         "color_scheme": "background-1",
         "secondary_background": false,
         "media_size": "small",
@@ -108,16 +109,16 @@
     "collection_list_8RRTLp": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_Fg7k4Q": {
+        "featured_collection_XpW7g7": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": "new-arrival"
           }
         },
-        "featured_collection_rV3BV3": {
+        "featured_collection_WTrqQz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gardening"
+            "collection": "sale"
           }
         },
         "featured_collection_xMrHnP": {
@@ -135,51 +136,51 @@
         "featured_collection_ARkzCr": {
           "type": "featured_collection",
           "settings": {
-            "collection": "hand-crafted-wire-art-sculpture"
+            "collection": "premium-hand-crafted-wire-art-sculpture"
           }
         },
         "featured_collection_rWcJAA": {
           "type": "featured_collection",
           "settings": {
-            "collection": "wire-art-tree"
+            "collection": "wire-art-sculpture"
+          }
+        },
+        "featured_collection_rV3BV3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hand-crafted-skulls-by-master-artisans"
           }
         },
         "featured_collection_AFLJGh": {
           "type": "featured_collection",
           "settings": {
-            "collection": "hand-carved-skulls-by-master-artisans"
+            "collection": "toy-art-collectibles"
           }
         },
         "featured_collection_qXC6QA": {
           "type": "featured_collection",
           "settings": {
-            "collection": "toy-art-collectibles"
+            "collection": "others"
           }
         },
-        "featured_collection_XpW7g7": {
+        "featured_collection_Fg7k4Q": {
           "type": "featured_collection",
           "settings": {
-            "collection": "category"
-          }
-        },
-        "featured_collection_WTrqQz": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "all"
+            "collection": "frontpage"
           }
         }
       },
       "block_order": [
-        "featured_collection_Fg7k4Q",
-        "featured_collection_rV3BV3",
+        "featured_collection_XpW7g7",
+        "featured_collection_WTrqQz",
         "featured_collection_xMrHnP",
         "featured_collection_bML3D9",
         "featured_collection_ARkzCr",
         "featured_collection_rWcJAA",
+        "featured_collection_rV3BV3",
         "featured_collection_AFLJGh",
         "featured_collection_qXC6QA",
-        "featured_collection_XpW7g7",
-        "featured_collection_WTrqQz"
+        "featured_collection_Fg7k4Q"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
